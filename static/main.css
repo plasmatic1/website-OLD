@@ -1,0 +1,45 @@
+*:not(code) {
+  font-family: "Ubuntu", "Calibri", "Helvetica", "Arial", sans-serif;
+}
+
+code {
+  font-family: "Consolas", monospace;
+}
+
+h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.view-table tr td {
+  vertical-align: top;
+  resize: both;
+  overflow: auto;
+}
+.view-table tr td.view-code {
+  width: 100%;
+  overflow: scroll;
+}
+.view-table tr td.view-code code {
+  height: 10px;
+}
+.view-table tr td.view-problem embed {
+  height: 1000px;
+  width: 800px;
+}
+
+#messages-div {
+  position: fixed;
+  bottom: 1em;
+  left: 1em;
+}
+
+.form-group.is-invalid .invalid-feedback {
+  display: block;
+}
+
+pre {
+  color: rgba(255, 63, 113, 0.99);
+}
+
+/*# sourceMappingURL=main.css.map */

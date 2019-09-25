@@ -18,8 +18,8 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('dmojsolutions', include('dmojsolutions.urls')),
-    path('todo', include('todolist.urls')),
-    path('misc', include('otherapps.urls')),
-    path('', include('main.urls'))
+    path('dmojsols', include('dmojsolutions.urls', namespace='dmojsolutions')),
+    path('todo', include('todolist.urls', namespace='todolist')),
+    path('other', include('otherapps.urls', namespace='otherapps')),
+    path('', include('main.urls', namespace='main'))
 ]

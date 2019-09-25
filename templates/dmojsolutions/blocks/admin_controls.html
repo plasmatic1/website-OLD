@@ -1,0 +1,36 @@
+{% if user.is_authenticated %}
+    <div class="block limit-40p">
+        <div class="heading">Admin Controls</div>
+
+        <table>
+            <tr>
+                <td>Reload</td>
+                <td><a href="{% url 'reload_problems' %}" class="button">
+                    <button>Reload Problems</button>
+                </a></td>
+                <td><a href="{% url 'reload_solutions' %}" class="button">
+                    <button>Reload Solutions</button>
+                </a></td>
+            </tr>
+
+            <tr>
+                <td>Delete</td>
+                <td><a href="{% url 'delete_problems' %}" class="button">
+                    <button>(Fast) Delete Problems</button>
+                </a></td>
+                <td><a href="{% url 'delete_solutions' %}" class="button">
+                    <button>(Fast) Delete Solutions</button>
+                </a></td>
+            </tr>
+
+            <tr>
+                <td>Django</td>
+                <td><a href="/admin" class="button">
+                    <button>Django Admin Panel</button>
+                </a></td>
+            </tr>
+        </table>
+    </div>
+
+    {% include 'blocks/ratelimit_stats.html' %}
+{% endif %}

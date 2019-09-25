@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %} Solution List {% endblock %}
+
+{% block body %}
+{#    SEARCH TABLE#}
+    {% load crispy_forms_tags %}
+    {% crispy form %}
+
+    <div class="block">
+        <div>
+            <h2>Results</h2>
+
+            <span class="problem-count-header">Showing problems {{ query_offset|add:"1" }} to {{ query_next }} of {{ count }}</span><br>
+        </div>
+
+        {#    SEARCH RESULTS#}
+        <table class="round-table">
+            <tr>
+                <th>Problem Name</th>
+                <th>C++</th>
+                <th>PY</th>
+                <th>Code</th>
+                <th>Group</th>
+            </tr>
+
+            {% for problem in problems %}
+                <tr>
+                    <td>
+                        <a href="https://dmoj.ca/problem/{{ problem.code }}">{{ problem.name }}</a>
+                    </td>
+
+                    <td>
+                        {% if problem.cpp_solution %}
+                            <a href="{% url 'view' problem.code 'cpp' %}">C++</a>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if problem.py_solution %}
+                            <a href="{% url 'view' problem.code 'py' %}">PY</a>
+                        {% endif %}
+                    </td>
+
+                    <td>{{ problem.code }}</td>
+                    <td>{{ problem.group }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    {% include 'dmojsolutions/blocks/admin_controls.html' %}
+{% endblock %}

@@ -1,9 +1,11 @@
 from django.core.exceptions import ObjectDoesNotExist
 from django.db import models
-from dmojsolutions.views.views import src_for_code
 
 
 # Create your models here.
+from dmojsolutions.views.github_util import src_for_code
+
+
 class Problem(models.Model):
     code = models.CharField(max_length=32, verbose_name='Problem Code')
     name = models.CharField(max_length=256, verbose_name='Problem Name')

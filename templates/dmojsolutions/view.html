@@ -1,0 +1,46 @@
+{% extends 'dmoj_viewer/../base.html' %}
+
+{% block title %} Problem {{ problem.name }} {% endblock %}
+{% block header %} Solution for "{{ problem.name }}" in "{{ ext }}" {% endblock %}
+
+{% block head-extra %}
+    <style>
+        .code {
+            white-space: pre-wrap;
+        }
+
+        li.L0, li.L1, li.L2, li.L3,
+        li.L5, li.L6, li.L7, li.L8 {
+            list-style-type: decimal !important;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    {% include 'widgets/back.html' %}
+
+    <div class="block">
+        <table class="view-table round-table">
+            <tr>
+                <th><h2>Problem</h2></th>
+                <th><h2>Solution <a href="{% url 'raw' code ext %}">(Raw Text)</a></h2></th>
+            </tr>
+            <tr>
+                <td class="view-problem">
+                    <embed src="{{ pdf_link }}" type="application/pdf">
+                </td>
+                <td class="view-code">
+                    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+                    <code class="code prettyprint linenums lang-{{ ext }}">{{ src }}</code>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        document.addEventListener('ready', function () {
+            console.log('yes');
+            document.querySelectorAll('li.L1 li.L3 li.L5 li.L7 li.L9').style.background = 'white';
+        });
+    </script>
+{% endblock %}

@@ -1,0 +1,20 @@
+<div class="block limit-40p">
+    <div class="heading">GitHub API Rate Limit Stats</div>
+
+    <table>
+        {% if rate_limit.initialized %}
+            <tr>
+                <td><b>Requests Remaining</b></td>
+                <td>{{ rate_limit.remaining }} / {{ rate_limit.total }}</td>
+            </tr>
+            <tr>
+                <td><b>Time Until Reset</b></td>
+                <td>{{ rate_limit.until_reset_str }} (INACCURATE)</td>
+            </tr>
+        {% else %}
+            <tr>
+                <td><b>No API Requests Sent!</b></td>
+            </tr>
+        {% endif %}
+    </table>
+</div>
