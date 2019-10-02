@@ -21,12 +21,12 @@ from view_auth import logout_user, LoginFormView
 urlpatterns = [
     # Path to subpages
     path('admin/', admin.site.urls, name='admin'),
-    path('dmojsols', include('dmojsolutions.urls', namespace='dmojsolutions')),
-    path('todo', include('todolist.urls', namespace='todolist')),
-    path('other', include('otherapps.urls', namespace='otherapps')),
+    path('dmojsols/', include('dmojsolutions.urls', namespace='dmojsolutions')),
+    path('todo/', include('todolist.urls', namespace='todolist')),
+    path('other/', include('otherapps.urls', namespace='otherapps')),
     path('', include('main.urls', namespace='main')),
 
     # Logging in/out
-    path('login', LoginFormView.as_view(), name='login'),
-    path('logout', logout_user, name='logout')
+    path('login/', LoginFormView.as_view(), name='login'),
+    path('logout/', logout_user, name='logout')
 ]
