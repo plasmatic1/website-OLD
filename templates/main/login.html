@@ -2,16 +2,13 @@
 
 {% block title %} Admin Login {% endblock %}
 
-{% block header %} Admin Account Login {% endblock %}
+{% block header %} Login {% endblock %}
 
 {% block body %}
-    <div class="block">
-        <h2>Login</h2>
-
-        <form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <input type="submit" value="Login">
-        </form>
+    <div class="row">
+        <div class="col">
+            {% load crispy_forms_tags %}
+            {% crispy form %}
+        </div>
     </div>
 {% endblock %}

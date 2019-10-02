@@ -11,21 +11,39 @@
             <li class="nav-item active">
                 <a class="nav-link" href="{% url 'main:index' %}">Home</a>
             </li>
-            <li class="nav-item disabled">
-                <a class="nav-link" href="#">Todo-List</a>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'todolist:index' %}">Todo-List</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'dmojsolutions:index' %}">DMOJ Solutions</a>
             </li>
-            <li class="nav-item disabled">
-                <a class="nav-link" href="#">Fun Apps</a>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'otherapps:index' %}">Fun Apps</a>
             </li>
-            <li class="nav-item disabled">
+            <li class="nav-item">
                 <a class="nav-link" href="#">Contact Me</a>
+            </li>
+
+            {% block nav-extra %} {% endblock %}
+        </ul>
+        <ul class="navbar-nav mr-0">
+            {#            Authentication Stuff#}
+            {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <span class="navbar-text">
+                        Welcome, {{ user.username }}!
+                    </span>
+                </li>
+            {% endif %}
+            <li class="nav-item">
+                {% if user.is_authenticated %}
+                    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                {% else %}
+                    <a class="nav-link" href="{% url 'login' %}">Login</a>
+                {% endif %}
             </li>
         </ul>
 
-        {% block nav-extra %} {% endblock %}
         {#        <form class="form-inline my-2 my-lg-0">#}
         {#            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">#}
         {#            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>#}

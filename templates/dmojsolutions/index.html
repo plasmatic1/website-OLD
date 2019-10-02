@@ -2,51 +2,85 @@
 
 {% block title %} Solution List {% endblock %}
 
+{% block header %} DMOJ Solution List {% endblock %}
+
 {% block body %}
-{#    SEARCH TABLE#}
-    {% load crispy_forms_tags %}
-    {% crispy form %}
-
-    <div class="block">
+    {#    SEARCH TABLE#}
+    <div class="col col-9">
         <div>
-            <h2>Results</h2>
-
-            <span class="problem-count-header">Showing problems {{ query_offset|add:"1" }} to {{ query_next }} of {{ count }}</span><br>
+            <h2>Search Results</h2>
+            <span class="problem-count-header">Showing solutions {{ offset|add:"1" }} to {{ offset_next|add:"1" }} of {{ solution_count }}</span><br>
         </div>
 
         {#    SEARCH RESULTS#}
-        <table class="round-table">
+        <table class="table table-bordered table-hover mt-3">
             <tr>
-                <th>Problem Name</th>
-                <th>C++</th>
-                <th>PY</th>
-                <th>Code</th>
-                <th>Group</th>
+                <th class="table-dark">Problem Name</th>
+                <th class="table-dark">C++</th>
+                <th class="table-dark">PY</th>
+                <th class="table-dark">Code</th>
+                <th class="table-dark">Group</th>
             </tr>
 
-            {% for problem in problems %}
+            {% for solution in solutions %}
                 <tr>
                     <td>
-                        <a href="https://dmoj.ca/problem/{{ problem.code }}">{{ problem.name }}</a>
+                        <a href="https://dmoj.ca/problem/{{ solution.code }}">{{ solution.name }}</a>
                     </td>
 
                     <td>
-                        {% if problem.cpp_solution %}
-                            <a href="{% url 'view' problem.code 'cpp' %}">C++</a>
+                        {% if solution.cpp_solution %}
+                            <a href="{% url 'dmojsolutions:view' solution.code 'cpp' %}">C++</a>
                         {% endif %}
                     </td>
                     <td>
-                        {% if problem.py_solution %}
-                            <a href="{% url 'view' problem.code 'py' %}">PY</a>
+                        {% if solution.py_solution %}
+                            <a href="{% url 'dmojsolutions:view' solution.code 'py' %}">PY</a>
                         {% endif %}
                     </td>
 
-                    <td>{{ problem.code }}</td>
-                    <td>{{ problem.group }}</td>
+                    <td>{{ solution.code }}</td>
+                    <td>{{ solution.group }}</td>
                 </tr>
             {% endfor %}
         </table>
     </div>
 
-    {% include 'dmojsolutions/blocks/admin_controls.html' %}
+    <div class="col col-3">
+        {#        Solution Search#}
+        <div class="row">
+            <div class="card">
+                <h4 class="card-header">Solution Search</h4>
+                <div class="card-body mx-2">
+                    {% load crispy_forms_tags %}
+                    {% crispy form %}
+                </div>
+            </div>
+        </div>
+
+        {#        Admin Controls#}
+        {% if user.is_authenticated %}
+            {% include 'dmojsolutions/blocks/admin_controls.html' %}
+            {% include 'dmojsolutions/blocks/ratelimit_stats.html' %}
+        {% endif %}
+    </div>
+{% endblock %}
+
+{% block extra %}
+    <script>
+        $(document).ready(function () {
+            // Offset Buttons
+            let $oFirst = $('#offset-first');
+            let $oPrev = $('#offset-prev');
+            let $oNext = $('#offset-next');
+
+            if (!{{ offset_can_go_back }}) {
+                $oFirst.addClass('disabled');
+                $oPrev.addClass('disabled');
+            }
+            if (!{{ offset_can_go_forward }}) {
+                $oNext.addClass('disabled');
+            }
+        });
+    </script>
 {% endblock %}

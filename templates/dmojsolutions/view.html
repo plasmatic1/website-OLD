@@ -1,6 +1,7 @@
-{% extends 'dmoj_viewer/../base.html' %}
+{% extends 'base.html' %}
 
 {% block title %} Problem {{ problem.name }} {% endblock %}
+
 {% block header %} Solution for "{{ problem.name }}" in "{{ ext }}" {% endblock %}
 
 {% block head-extra %}
@@ -17,13 +18,10 @@
 {% endblock %}
 
 {% block body %}
-    {% include 'widgets/back.html' %}
-
-    <div class="block">
-        <table class="view-table round-table">
+        <table class="table table-borderless">
             <tr>
-                <th><h2>Problem</h2></th>
-                <th><h2>Solution <a href="{% url 'raw' code ext %}">(Raw Text)</a></h2></th>
+                <th><h2>Problem Statement</h2></th>
+                <th><h2>Solution <a href="{% url 'dmojsolutions:raw' code ext %}">(Raw Text)</a></h2></th>
             </tr>
             <tr>
                 <td class="view-problem">
@@ -35,7 +33,6 @@
                 </td>
             </tr>
         </table>
-    </div>
 
     <script>
         document.addEventListener('ready', function () {

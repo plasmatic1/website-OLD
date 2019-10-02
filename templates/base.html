@@ -10,12 +10,6 @@
     {#    TITLE#}
     <title>{% block title %} {% endblock %}</title>
 
-    {#    LOADING CSS#}
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'main.css' %}">
-    <link rel="stylesheet" href="{% static 'header.css' %}">
-    <link rel="stylesheet" href="{% static 'forms.css' %}">
-
     {#    LOADING BOOTSTRAP#}
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -29,6 +23,12 @@
             integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
             crossorigin="anonymous"></script>
 
+    {#    LOADING CSS#}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+    <link rel="stylesheet" href="{% static 'header.css' %}">
+    <link rel="stylesheet" href="{% static 'forms.css' %}">
+
     {#    EXTRA HEAD STUFF#}
     {% block head-extra %} {% endblock %}
 </head>
@@ -36,13 +36,27 @@
 
 {% include 'nav.html' %}
 
-<h1 class="page-header">
-    {% block header %} {% endblock %}
-</h1>
+{#If user object is not in context, show error#}
+{% if not user %}
+    <h1 style="color: red;">User object not in context!</h1>
+{% endif %}
 
+{#Page body#}
 <div class="body">
     <div class="container">
-        {% block body %} {% endblock %}
+        {#Header#}
+        <div class="row" id="header">
+            <h1>
+                {% block header %}{% endblock %}
+            </h1>
+        </div>
+        <div class="row">
+            <hr class="col col-6 ml-0">
+        </div>
+
+        <div class="row">
+            {% block body %} {% endblock %}
+        </div>
     </div>
 </div>
 
@@ -56,6 +70,8 @@
     // Add "novalidate" to all forms so that the Bootstrap validation is used instead of the ugly HTML one
     $('form').attr('novalidate', 'novalidate')
 </script>
+
+{% block extra %} {% endblock %}
 
 {% include 'widgets/messages.html' %}
 

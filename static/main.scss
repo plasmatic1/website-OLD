@@ -18,7 +18,6 @@ h2, h3, h4, h5, h6 {
 
 
 // View HTML
-
 $pdf-height: 1000px;
 $pdf-width: 800px;
 
@@ -45,7 +44,24 @@ $pdf-width: 800px;
   }
 }
 
+// -------------------------
 // IDK MAN MORE SHIT
+// -------------------------
+
+// Special tables that have little margins
+.table-layout-only {
+  tr {
+    td, th {
+      padding: 5px;
+    }
+  }
+}
+
+// Fix container width
+.container {
+  max-width: 1500px;
+}
+
 // So that messages float to the bottom
 #messages-div {
   position: fixed;

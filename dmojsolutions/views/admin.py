@@ -5,10 +5,9 @@ from urllib.error import URLError
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.core.exceptions import ObjectDoesNotExist
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import redirect
 
-from app.models import Problem, Solution
-
+from dmojsolutions.models import Problem, Solution
 from .github_util import codes_for_ext
 
 
@@ -40,15 +39,7 @@ def reload_problems(req):
 
         messages.add_message(req, messages.WARNING, msg)
 
-    return redirect('index')
-
-
-@login_required(login_url='login')
-def delete_problems(req):
-    Problem.objects.all().delete()
-    messages.add_message(req, messages.INFO, 'Success!')
-
-    return redirect('index')
+    return redirect('dmojsolutions:index')
 
 
 @login_required(login_url='login')
@@ -71,7 +62,15 @@ def reload_solutions(req):
 
     messages.add_message(req, messages.INFO, 'Added %d solutions!' % len(solutions))
 
-    return redirect('index')
+    return redirect('dmojsolutions:index')
+
+
+@login_required(login_url='login')
+def delete_problems(req):
+    Problem.objects.all().delete()
+    messages.add_message(req, messages.INFO, 'Success!')
+
+    return redirect('dmojsolutions:index')
 
 
 @login_required(login_url='login')
@@ -79,4 +78,4 @@ def delete_solutions(req):
     Solution.objects.all().delete()
     messages.add_message(req, messages.INFO, 'Success!')
 
-    return redirect('index')
+    return redirect('dmojsolutions:index')

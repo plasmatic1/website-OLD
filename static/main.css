@@ -28,6 +28,14 @@ h2, h3, h4, h5, h6 {
   width: 800px;
 }
 
+.table-layout-only tr td, .table-layout-only tr th {
+  padding: 5px;
+}
+
+.container {
+  max-width: 1500px;
+}
+
 #messages-div {
   position: fixed;
   bottom: 1em;
