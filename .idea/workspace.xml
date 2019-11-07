@@ -2,22 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e5950ff1-e007-43b0-9793-a17d1de6b347" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/Moses.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/todolist/homework.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/todolist/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/todolist/problems.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/todolist/projects.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dmojsolutions/views/index.py" beforeDir="false" afterPath="$PROJECT_DIR$/dmojsolutions/views/index.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/main.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/static/main.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/widgets/messages.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/widgets/messages.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todolist/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/todolist/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todolist/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/todolist/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todolist/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/todolist/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todolist/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/todolist/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/settings.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,22 +16,31 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/base.html">
+        <entry file="file://$PROJECT_DIR$/static/main.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="422">
-              <caret line="58" column="23" selection-start-line="58" selection-start-column="23" selection-end-line="58" selection-end-column="23" />
-              <folding>
-                <element signature="n#style#0;n#h1#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="561">
+              <caret line="33" column="24" lean-forward="true" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/main.scss">
+        <entry file="file://$PROJECT_DIR$/website/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="33" column="24" lean-forward="true" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
+            <state relative-caret-position="285">
+              <caret line="27" column="70" selection-start-line="27" selection-start-column="70" selection-end-line="27" selection-end-column="70" />
+              <folding>
+                <element signature="e#308#317#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="44" selection-start-line="2" selection-start-column="44" selection-end-line="2" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -60,7 +54,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/todolist/homework.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="221">
@@ -150,7 +144,6 @@
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/dmojsolutions/views/github_util.py" />
         <option value="$PROJECT_DIR$/website/private_config.py" />
-        <option value="$PROJECT_DIR$/config.py" />
         <option value="$PROJECT_DIR$/dmojsolutions/models.py" />
         <option value="$PROJECT_DIR$/main/views.py" />
         <option value="$PROJECT_DIR$/main/urls.py" />
@@ -175,7 +168,6 @@
         <option value="$PROJECT_DIR$/templates/dmojsolutions/blocks/admin_controls.html" />
         <option value="$PROJECT_DIR$/templates/dmojsolutions/blocks/ratelimit_stats.html" />
         <option value="$PROJECT_DIR$/website/urls.py" />
-        <option value="$PROJECT_DIR$/website/settings.py" />
         <option value="$PROJECT_DIR$/dmojsolutions/views/index.py" />
         <option value="$PROJECT_DIR$/templates/nav.html" />
         <option value="$PROJECT_DIR$/templates/todolist/projects.html" />
@@ -187,8 +179,10 @@
         <option value="$PROJECT_DIR$/todolist/views.py" />
         <option value="$PROJECT_DIR$/todolist/models.py" />
         <option value="$PROJECT_DIR$/templates/todolist/problems.html" />
-        <option value="$PROJECT_DIR$/static/main.scss" />
         <option value="$PROJECT_DIR$/templates/todolist/homework.html" />
+        <option value="$PROJECT_DIR$/static/main.scss" />
+        <option value="$PROJECT_DIR$/website/settings.py" />
+        <option value="$PROJECT_DIR$/config.py" />
       </list>
     </option>
   </component>
@@ -347,12 +341,12 @@
       <workItem from="1569372949230" duration="9391000" />
       <workItem from="1569975652305" duration="10198000" />
       <workItem from="1569986437071" duration="457000" />
-      <workItem from="1573075680217" duration="21793000" />
+      <workItem from="1573075680217" duration="22092000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43851000" />
+    <option name="totallyTimeSpent" value="44150000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
@@ -412,13 +406,6 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/website/private_config.py" />
-    <entry file="file://$PROJECT_DIR$/config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/main/base.html" />
     <entry file="file://$PROJECT_DIR$/requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
@@ -550,16 +537,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/website/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="149" selection-start-line="149" selection-end-line="149" />
-          <folding>
-            <element signature="e#308#317#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dmojsolutions/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -644,13 +621,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/todolist/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" selection-start-line="33" selection-end-line="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/widgets/messages.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -695,13 +665,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/main.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="24" lean-forward="true" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/todolist/problems.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -716,6 +679,37 @@
           <folding>
             <element signature="n#style#0;n#p#0;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/todolist/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/main.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" column="24" lean-forward="true" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="27" column="70" selection-start-line="27" selection-start-column="70" selection-end-line="27" selection-end-column="70" />
+          <folding>
+            <element signature="e#308#317#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="44" selection-start-line="2" selection-start-column="44" selection-end-line="2" selection-end-column="44" />
         </state>
       </provider>
     </entry>

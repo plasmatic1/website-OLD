@@ -12,13 +12,11 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import sys
 from importlib import import_module
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
@@ -27,7 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # CHECK IF SECRET_KEY and DEBUG and GITHUB_AUTH_KEY are present and set them
 try:
     config_module = import_module('config')
-    for key in ['SECRET_KEY', 'DEBUG', 'GITHUB_AUTH_KEY']:
+    for key in ['SECRET_KEY', 'DEBUG', 'GITHUB_AUTH_KEY', 'STATIC_ROOT']:
         if not hasattr(config_module, key):
             sys.stderr.write(f'Key {key} does not exist in private config!\n')
             sys.exit(-1)
@@ -38,7 +36,6 @@ except ModuleNotFoundError:
     sys.exit(-1)
 
 ALLOWED_HOSTS = ['*']
-
 
 # Application definition
 
@@ -93,7 +90,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'website.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
@@ -103,7 +99,6 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -123,7 +118,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
@@ -137,7 +131,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
@@ -145,5 +138,5 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
 
-STATIC_ROOT = '~/staticfiles'  # linux only thing tbh
+# STATIC_ROOT = '~/staticfiles'  # linux only thing tbh
 STATIC_URL = '/static/'
