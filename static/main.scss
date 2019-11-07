@@ -16,8 +16,22 @@ h2, h3, h4, h5, h6 {
   margin-bottom: 5px;
 }
 
+// Make sure the container doesn't just float-left completely
+.container {
+  max-width: 85% !important;
+}
 
-// View HTML
+// So the messages div doesn't cover the entire bottom
+#messages-div {
+  max-width: 25% !important;
+}
+
+// text-warning is too light
+.text-warning2 {
+  color: #c19000;
+}
+
+// DM::OJ-sols View HTML
 $pdf-height: 1000px;
 $pdf-width: 800px;
 

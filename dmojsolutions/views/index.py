@@ -82,7 +82,7 @@ def index(req):
     if submit == '<<':
         offset = 0
     elif submit == '<':
-        if offset - PROBLEMS_PER_PAGE > 0:
+        if offset - PROBLEMS_PER_PAGE >= 0:
             offset -= PROBLEMS_PER_PAGE
         else:
             messages.error(req, 'Invalid offset for submit method! (<)')

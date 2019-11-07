@@ -1,0 +1,86 @@
+{% extends 'todolist/index.html' %}
+
+{% block page_name %}homework{% endblock %}
+
+{% block body_inner %}
+    <div class="col col-8">
+        <h3>Homeworks</h3>
+
+        <ul class="list-group mt-2 mb-4">
+            {% for homework in homeworks %}
+
+                {% with homework.overdue as overdue %}
+                    {% with homework.due_tommorow as due_tommorow %}
+                        <li class="list-group-item {% if overdue %}text-danger{% elif due_tommorow %}text-warning2{% endif %}">
+                            <span>{{ homework.subject }} - {{ homework.name }} ({{ homework.due_date }})</span>
+
+                            {% if user.is_authenticated %}
+                                <a href="{% url 'todolist:remove_homework' homework.id %}"
+                                   class="btn btn-sm btn-outline-danger float-right">Remove</a>
+                            {% endif %}
+
+                            {% if homework.has_comments %}
+                                <p class="text-muted ml-1 mb-0"
+                                   style="font-size: 10pt; font-style: italic;">{{ homework.comments }}</p>
+                            {% endif %}
+                        </li>
+                    {% endwith %}
+                {% endwith %}
+
+            {% endfor %}
+        </ul>
+
+        <h3>Subjects</h3>
+
+        <ul class="list-group mt-2">
+            {% for subject in subjects %}
+                <li class="list-group-item align-items-center">
+                    <span>{{ subject.name }} (ID: {{ subject.id }})</span>
+
+                    {% if user.is_authenticated %}
+                        <a href="{% url 'todolist:remove_subject' subject.id %}"
+                           class="btn btn-sm btn-outline-danger float-right">Remove</a>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="col col-4">
+        <div class="row">
+            <div class="card {% if not user.is_authenticated %}border-danger{% endif %}">
+                <div class="card-header {% if not user.is_authenticated %}text-danger{% endif %}">
+                    Add Homework
+                </div>
+                {% if user.is_authenticated %}
+                    <div class="card-body ml-3 mr-3">
+                        {% load crispy_forms_tags %}
+                        {% crispy homework_form %}
+                    </div>
+                {% else %}
+                    <div class="card-body text-danger">
+                        You must be logged in to add homeworks!
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="card {% if not user.is_authenticated %}border-danger{% endif %}">
+                <div class="card-header {% if not user.is_authenticated %}text-danger{% endif %}">
+                    Add Subject
+                </div>
+                {% if user.is_authenticated %}
+                    <div class="card-body ml-3 mr-3">
+                        {% load crispy_forms_tags %}
+                        {% crispy subject_form %}
+                    </div>
+                {% else %}
+                    <div class="card-body text-danger">
+                        You must be logged in to add subjects!
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Todo List{% endblock %}
+
+{% block header %}Todo List{% endblock %}
+
+{% block body %}
+    <div class="col">
+        <div class="row">
+            <ul class="nav nav-pills" id="todo-category-nav">
+                <li class="nav-item">
+                    <a class="nav-link" id="problems" href="{% url 'todolist:problems' %}">Problems</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="homework" href="{% url 'todolist:homework' %}">Homework</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="projects" href="{% url 'todolist:projects' %}">Projects</a>
+                </li>
+            </ul>
+        </div>
+        <div class="row mt-4">
+            {% block body_inner %} {% endblock %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block extra %}
+    <script>
+        const $navLink = $('ul#todo-category-nav li a#' + "{% block page_name %}{% endblock %}");
+        $navLink.addClass('active');
+    </script>
+{% endblock %}

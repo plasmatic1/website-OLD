@@ -1,0 +1,54 @@
+{% extends 'todolist/index.html' %}
+
+{% block page_name %}problems{% endblock %}
+
+{% block body_inner %}
+    {% load static %}
+
+    <div class="col col-8">
+        <h3>Problems</h3>
+
+        <ul class="list-group mt-2">
+            {% for problem in problems %}
+                <li class="list-group-item">
+                    {% with 'icons/'|add:problem.type|add:'.png' as problem_icon %}
+                        {#                        <span>Img source: "{{ problem_icon }}"</span>#}
+                        <img src="{% static problem_icon %}" width="20" height="20">
+                    {% endwith %}
+
+                    <span class="ml-2">
+                        {% if problem.has_name %}
+                            <a href="{{ problem.link }}">{{ problem.name }}</a>
+                        {% else %}
+                            <a href="{{ problem.link }}">{{ problem.link }}</a>
+                        {% endif %}
+                    </span>
+
+                    {% if user.is_authenticated %}
+                        <a href="{% url 'todolist:remove_problem' problem.id %}"
+                           class="btn btn-sm btn-outline-danger float-right">Remove</a>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="col col-4">
+        <div class="card {% if not user.is_authenticated %}border-danger{% endif %}">
+            <div class="card-header {% if not user.is_authenticated %}text-danger{% endif %}">
+                Add Problem
+            </div>
+            {% if user.is_authenticated %}
+                <div class="card-body ml-3">
+                    {% load crispy_forms_tags %}
+                    {% crispy form %}
+                </div>
+            {% else %}
+                <div class="card-body text-danger">
+                    You must be logged in to add problems!
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+{% endblock %}

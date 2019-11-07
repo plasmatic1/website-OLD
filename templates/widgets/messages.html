@@ -1,6 +1,6 @@
 <div class="container" id="messages-div">
     <div class="row">
-        <div class="col col-4">
+        <div class="col">
             {% for message in messages %}
                 {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
                     <div class="alert alert-danger" role="alert">{{ message }}</div>
