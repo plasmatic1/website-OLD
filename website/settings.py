@@ -49,6 +49,7 @@ INSTALLED_APPS = [
 
     # Extensions/Plugins/Whatever
     'crispy_forms',
+    'bootstrap_datepicker_plus',
 
     # Website Components
     'dmojsolutions.apps.DmojsolutionsConfig',

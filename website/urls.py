@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 from view_auth import logout_user, LoginFormView
+from view_utils import not_implemented
 
 urlpatterns = [
     # Path to subpages
@@ -28,5 +29,8 @@ urlpatterns = [
 
     # Logging in/out
     path('login/', LoginFormView.as_view(), name='login'),
-    path('logout/', logout_user, name='logout')
+    path('logout/', logout_user, name='logout'),
+
+    # Other utility things
+    path('login_as_guest/', not_implemented, name='login_as_guest')
 ]
