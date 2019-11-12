@@ -16,8 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from view_auth import logout_user, LoginFormView
-from view_utils import not_implemented
+from view_auth import logout_user, LoginFormView, login_as_guest
 
 urlpatterns = [
     # Path to subpages
@@ -32,5 +31,5 @@ urlpatterns = [
     path('logout/', logout_user, name='logout'),
 
     # Other utility things
-    path('login_as_guest/', not_implemented, name='login_as_guest')
+    path('login_as_guest/', login_as_guest, name='login_as_guest')
 ]

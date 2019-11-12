@@ -1,0 +1,20 @@
+{#ARGUMENTS:#}
+{#- item_name -> The name of the "thing" being added.  (i.e. problem, homework, subject)#}
+{#- form -> The form object of the form#}
+
+<div class="card {% if not user.is_authenticated %}border-danger{% endif %}">
+    <div class="card-header {% if not user.is_authenticated %}text-danger{% endif %}">
+        Add {{ item_name|title }}
+    </div>
+    {% if user.is_authenticated %}
+        <div class="card-body ml-3 mr-3">
+            {% load crispy_forms_tags %}
+            {% crispy form %}
+        </div>
+    {% else %}
+        <div class="card-body text-danger">
+            <p>You must be logged in to add {{ item_name }}s!</p>
+            <a href="{% url 'login_as_guest' %}">Login as guest</a>
+        </div>
+    {% endif %}
+</div>

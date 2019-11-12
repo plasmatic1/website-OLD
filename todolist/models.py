@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 from datetime import datetime, timedelta
 
@@ -7,6 +8,7 @@ from django.db.models import Model
 
 class Subject(Model):
     name = models.CharField(max_length=256, verbose_name='Name')
+    user = models.ForeignKey(to=User, on_delete=models.CASCADE, verbose_name='User')
 
     def __str__(self):
         return self.name
@@ -20,6 +22,7 @@ class Homework(Model):
     subject = models.ForeignKey(to=Subject, on_delete=models.CASCADE, verbose_name='Subject')
     due_date = models.DateField(verbose_name='Due Date')
     comments = models.CharField(max_length=1024, verbose_name='Comments')
+    user = models.ForeignKey(to=User, on_delete=models.CASCADE, verbose_name='User')
 
     @property
     def has_comments(self):
@@ -38,10 +41,11 @@ VALID_PROBLEM_TYPES = ['dmoj', 'cf', 'atcoder', 'kattis']
 
 
 class Problem(Model):
-    name = models.CharField(max_length=64, verbose_name='Name')
+    name = models.CharField(max_length=128, verbose_name='Name')
     link = models.CharField(max_length=128, verbose_name='Link')
     type = models.CharField(max_length=64, verbose_name='Type')
     difficulty = models.IntegerField(verbose_name='Difficulty', default=-1)
+    user = models.ForeignKey(to=User, on_delete=models.CASCADE, verbose_name='User')
 
     @property
     def has_name(self):
@@ -50,4 +54,9 @@ class Problem(Model):
 
 class Project(Model):
     name = models.CharField(max_length=256, verbose_name='Name')
-    description = models.CharField(max_length=256, verbose_name='Description', default='')
+    description = models.CharField(max_length=1024, verbose_name='Description', default='')
+    user = models.ForeignKey(to=User, on_delete=models.CASCADE, verbose_name='User')
+
+    @property
+    def has_description(self):
+        return len(self.description) > 0

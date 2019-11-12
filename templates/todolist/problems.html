@@ -24,31 +24,14 @@
                         {% endif %}
                     </span>
 
-                    {% if user.is_authenticated %}
-                        <a href="{% url 'todolist:remove_problem' problem.id %}"
-                           class="btn btn-sm btn-outline-danger float-right">Remove</a>
-                    {% endif %}
+                    {% include 'todolist/widgets/remove_button.html' with pattern_name='todolist:remove_problem' entry_id=problem.id %}
                 </li>
             {% endfor %}
         </ul>
     </div>
 
     <div class="col col-4">
-        <div class="card {% if not user.is_authenticated %}border-danger{% endif %}">
-            <div class="card-header {% if not user.is_authenticated %}text-danger{% endif %}">
-                Add Problem
-            </div>
-            {% if user.is_authenticated %}
-                <div class="card-body ml-3">
-                    {% load crispy_forms_tags %}
-                    {% crispy form %}
-                </div>
-            {% else %}
-                <div class="card-body text-danger">
-                    You must be logged in to add problems!
-                </div>
-            {% endif %}
-        </div>
+        {% include 'todolist/widgets/add_new_form.html' with item_name='problem' form=form %}
     </div>
 
 {% endblock %}

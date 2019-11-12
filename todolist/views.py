@@ -6,10 +6,11 @@ from crispy_forms.layout import Layout, Row, Submit, Field
 from django import forms
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 
-from todolist.models import Problem, VALID_PROBLEM_TYPES, Subject, Homework
+from todolist.models import Problem, VALID_PROBLEM_TYPES, Subject, Homework, Project
 from todolist.util.parse_problem_url import parse_problem_url, InvalidURLDomain
+from todolist.util.remove_items import remove_item_view
 
 
 def index(_):
@@ -79,32 +80,18 @@ def problems(req):
     form = ProblemForm(req.POST or None)
 
     if req.user.is_authenticated and form.is_valid():
-        problem = Problem(**form.cleaned_data)
+        problem = Problem(**form.cleaned_data, user=req.user)
         problem.save()
         form = ProblemForm()
         messages.success(req, 'Added problem!')
 
     context = {'form': form,
-               'problems': Problem.objects.order_by('type').order_by('link')}
+               'problems': Problem.objects.filter(user=req.user).order_by('type').order_by(
+                   'link') if req.user.is_authenticated else []}
     return render(req, 'todolist/problems.html', context)
 
 
-@login_required(login_url='/login')
-def remove_problem(req, problem_id):
-    """
-    Deals with requests to the "remove_problem" path
-    :param req: Request object
-    :param problem_id: Problem ID
-    :return:
-    """
-
-    if req.user.is_authenticated:
-        Problem.objects.filter(pk=problem_id).delete()
-        messages.success(req, 'Removed problem!')
-    else:
-        messages.error(req, 'Insufficient permissions!')
-
-    return redirect('todolist:problems')
+remove_problem = remove_item_view(Problem, 'todolist:problems')
 
 
 # HOMEWORK
@@ -143,9 +130,15 @@ class HomeworkForm(forms.Form):
     comments = forms.CharField(max_length=1024, label='Comments', widget=forms.Textarea, required=False)
 
     def __init__(self, *args, **kwargs):
+        user = kwargs.pop('req').user
         super().__init__(*args, **kwargs)
 
-        choices = [(subject.id, subject.name) for subject in Subject.objects.order_by('name').all()]
+        if user.is_authenticated:
+            choices = [(subject.id, subject.name) for subject in
+                       Subject.objects.filter(user=user).order_by('name').all()]
+        else:
+            choices = []
+
         self.fields['subject'] = forms.ChoiceField(
             choices=choices, label='Subject',
             required=True, widget=forms.Select(attrs={'size': len(choices)}))
@@ -188,62 +181,75 @@ def homework(req):
     :return:
     """
 
-    homework_form = HomeworkForm()
+    homework_form = HomeworkForm(req=req)
     subject_form = SubjectForm()
 
     if req.user.is_authenticated:
         submit = req.POST.get('submit')
         if submit == 'Add Homework':
-            homework_form = HomeworkForm(req.POST or None)
+            homework_form = HomeworkForm(req.POST or None, req=req)
             if homework_form.is_valid():
-                homework = Homework(**homework_form.cleaned_data)
+                homework = Homework(**homework_form.cleaned_data, user=req.user)
                 homework.save()
                 messages.success(req, 'Added Homework!')
-                homework_form = HomeworkForm()
+
+                homework_form = HomeworkForm(req=req)
+
         if submit == 'Add Subject':
             subject_form = SubjectForm(req.POST or None)
             if subject_form.is_valid():
-                subject = Subject(**subject_form.cleaned_data)
+                subject = Subject(**subject_form.cleaned_data, user=req.user)
                 subject.save()
                 messages.success(req, 'Added subject!')
+
                 subject_form = SubjectForm()
-                homework_form = HomeworkForm()  # Reload
+                homework_form = HomeworkForm(req=req)  # Reload
 
     context = {'subject_form': subject_form, 'homework_form': homework_form,
-               'subjects': Subject.objects.all().order_by('name'),
-               'homeworks': Homework.objects.all().order_by('due_date')}
+               'subjects': Subject.objects.all().filter(user=req.user).order_by(
+                   'name') if req.user.is_authenticated else [],
+               'homeworks': Homework.objects.all().filter(user=req.user).order_by(
+                   'due_date') if req.user.is_authenticated else []}
     return render(req, 'todolist/homework.html', context)
 
 
-@login_required(login_url='login/')
-def remove_subject(req, subject_id):
-    """
-    Handles requests for "removing subjects"
-    :param req: Request object
-    :param subject_id: The subject ID
-    :return:
-    """
-
-    Subject.objects.filter(pk=subject_id).delete()
-    messages.success(req, 'Removed subject!')
-    return redirect('todolist:homework')
+remove_subject = remove_item_view(Subject, 'todolist:homework')
+remove_homework = remove_item_view(Homework, 'todolist:homework')
 
 
-@login_required(login_url='login/')
-def remove_homework(req, homework_id):
-    """
-    Handles requests for "removing homework"
-    :param req: Request object
-    :param homework_id: The homework ID
-    :return:
-    """
+# PROJECTS
 
-    Homework.objects.filter(pk=homework_id).delete()
-    messages.success(req, 'Removed homework!')
-    return redirect('todolist:homework')
+
+class ProjectForm(forms.Form):
+    name = forms.CharField(max_length=256, label='Name')
+    description = forms.CharField(max_length=1024, label='Description', widget=forms.Textarea, initial='',
+                                  required=False)
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        self.helper = FormHelper()
+        self.helper.layout = Layout(
+            Row('name'),
+            Row(Field('description', rows='4', style='resize: none;')),
+            Row(Submit('submit', 'Add Project'))
+        )
 
 
 def projects(req):
-    context = {}
+    project_form = ProjectForm(req.POST or None)
+    if project_form.is_valid():
+        project = Project(**project_form.cleaned_data, user=req.user)
+        project.save()
+        messages.success(req, 'Added project!')
+        project_form = ProjectForm()
+
+    context = {
+        'projects': Project.objects.filter(user=req.user).order_by('name').all() if req.user.is_authenticated else [],
+        'form': project_form
+    }
 
     return render(req, 'todolist/projects.html', context)
+
+
+remove_project = remove_item_view(Project, 'todolist:projects')

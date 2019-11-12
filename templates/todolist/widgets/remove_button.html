@@ -1,0 +1,11 @@
+{#DESCRIPTION#}
+{#Widget for "remove" buttons (buttons that remove entries from the database)#}
+
+{#ARGUMENTS#}
+{#- pattern_name -> The pattern name for the URL to remove the entry #}
+{#- entry_id -> The ID of the entry being removed.  To be supplied to the url pattern in a link#}
+
+{% if user.is_authenticated %}
+    <a href="{% url pattern_name entry_id %}"
+       class="btn btn-sm btn-outline-danger float-right">Remove</a>
+{% endif %}

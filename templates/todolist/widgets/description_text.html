@@ -1,0 +1,11 @@
+{#DESCRIPTION#}
+{#An element that displays description-like text (muted, italicized, whitespace is rendered) for use in UI elements#}
+{#The text rendering is conditional and the condition is supplied as an argument#}
+
+{#ARGUMENTS#}
+{#- text -> The text to display#}
+{#- condition -> The condition for whether the text will be displayed or not#}
+
+{% if condition %}
+    <p class="text-muted ml-1 mb-0" style="font-size: 10pt; font-style: italic;">{{ text|linebreaksbr }}</p>
+{% endif %}

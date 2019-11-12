@@ -3,32 +3,34 @@ from .models import *
 
 
 class SubjectAdmin(admin.ModelAdmin):
-    list_display = ('name',)
-    search_fields = ('name',)
-    ordering = ('name',)
+    list_display = ('user', 'name',)
+    list_filter = ('user',)
+    search_fields = ('user', 'name',)
+    ordering = ('user', 'name',)
 
 
 class HomeworkAdmin(admin.ModelAdmin):
-    list_display = ('subject', 'name', 'due_date', 'comments')
-    list_filter = ('subject',)
-    search_fields = ('subject', 'name')
-    ordering = ('subject', 'due_date', 'name')
+    list_display = ('user', 'subject', 'name', 'due_date', 'comments')
+    list_filter = ('user', 'subject',)
+    search_fields = ('user', 'subject', 'name')
+    ordering = ('user', 'subject', 'due_date', 'name')
 
 
 class ProblemAdmin(admin.ModelAdmin):
-    list_display = ('link', 'name', 'type')
-    list_filter = ('type',)
-    search_fields = ('link', 'name', 'type')
-    ordering = ('link', 'name')
+    list_display = ('user', 'link', 'name', 'type')
+    list_filter = ('user', 'type',)
+    search_fields = ('user', 'link', 'name', 'type')
+    ordering = ('user', 'link', 'name')
 
     def name(self, obj):
         return 'N/A' if len(obj.name) == 0 else obj.name
 
 
 class ProjectAdmin(admin.ModelAdmin):
-    list_display = ('name', 'description')
-    search_fields = ('name',)
-    ordering = ('name',)
+    list_display = ('user', 'name', 'description')
+    list_filter = ('user',)
+    search_fields = ('user', 'name',)
+    ordering = ('user', 'name',)
 
     def description(self, obj):
         return obj.description if len(obj.description) < 30 else obj.description[:30] + '...'

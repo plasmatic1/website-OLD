@@ -3,5 +3,24 @@
 {% block page_name %}projects{% endblock %}
 
 {% block body_inner %}
+    {% load static %}
+
+    <div class="col col-8">
+        <h3>Projects</h3>
+
+        <ul class="list-group mt-2">
+            {% for project in projects %}
+                <li class="list-group-item">
+                    <span>{{ project.name }}</span>
+                    {% include 'todolist/widgets/description_text.html' with text=project.description condition=project.has_description %}
+                    {% include 'todolist/widgets/remove_button.html' with pattern_name='todolist:remove_project' entry_id=project.id %}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="col col-4">
+        {% include "todolist/widgets/add_new_form.html" with item_name="project" form=form %}
+    </div>
 
 {% endblock %}

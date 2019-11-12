@@ -59,7 +59,7 @@
         </div>
 
         {#        Admin Controls#}
-        {% if user.is_authenticated %}
+        {% if user.is_superuser %}
             {% include 'dmojsolutions/blocks/admin_controls.html' %}
             {% include 'dmojsolutions/blocks/ratelimit_stats.html' %}
         {% endif %}

@@ -6,8 +6,10 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.core.exceptions import ObjectDoesNotExist
 from django.shortcuts import redirect
+from django.urls import reverse
 
 from dmojsolutions.models import Problem, Solution
+from view_utils import superuser_required
 from .github_util import codes_for_ext
 
 
@@ -19,6 +21,7 @@ def get_json(url):
 PROBLEMS_LIST_URL = 'https://dmoj.ca/api/problem/list'
 
 
+@superuser_required(url_pattern_name='dmojsolutions:index')
 @login_required(login_url='login')
 def reload_problems(req):
     try:
@@ -42,6 +45,7 @@ def reload_problems(req):
     return redirect('dmojsolutions:index')
 
 
+@superuser_required(url_pattern_name='dmojsolutions:index')
 @login_required(login_url='login')
 def reload_solutions(req):
     Solution.objects.all().delete()
@@ -65,6 +69,7 @@ def reload_solutions(req):
     return redirect('dmojsolutions:index')
 
 
+@superuser_required(url_pattern_name='dmojsolutions:index')
 @login_required(login_url='login')
 def delete_problems(req):
     Problem.objects.all().delete()
@@ -73,6 +78,7 @@ def delete_problems(req):
     return redirect('dmojsolutions:index')
 
 
+@superuser_required(url_pattern_name='dmojsolutions:index')
 @login_required(login_url='login')
 def delete_solutions(req):
     Solution.objects.all().delete()
