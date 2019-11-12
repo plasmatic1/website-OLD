@@ -9,7 +9,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
 
 from todolist.models import Problem, VALID_PROBLEM_TYPES, Subject, Homework, Project
-from todolist.util.parse_problem_url import parse_problem_url, InvalidURLDomain
+from todolist.util.parse_problem_url import parse_problem_url, InvalidURLDomain, ProblemURLParseError
 from todolist.util.remove_items import remove_item_view
 
 
@@ -63,7 +63,7 @@ class ProblemForm(forms.Form):
                 problem_type, problem_name = parse_problem_url(problem_link)
                 cleaned_data['type'] = problem_type
                 cleaned_data['name'] = problem_name
-            except InvalidURLDomain as e:
+            except (InvalidURLDomain, ProblemURLParseError) as e:
                 if problem_link:
                     self.add_error('link', str(e))
 

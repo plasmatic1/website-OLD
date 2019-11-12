@@ -22,4 +22,5 @@ WIP
 
 ## Important Notes
 
+- Tested on: `Python 3.7.3`.  Likely compatible with: `Python 3.6`, `Python 3.7`, `Python 3.8`
 - `todolist` uses the `Problem` model from `dmojsolutions` to resolve the names of DM::OJ problems from their links
