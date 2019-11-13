@@ -5,8 +5,7 @@ from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Row, Submit, Field
 from django import forms
 from django.contrib import messages
-from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect
 
 from todolist.models import Problem, VALID_PROBLEM_TYPES, Subject, Homework, Project
 from todolist.util.parse_problem_url import parse_problem_url, InvalidURLDomain, ProblemURLParseError

@@ -45,7 +45,7 @@ def parse_cf(url, parse_res):
     """
 
     path = parse_res.path.split('/')
-    contest_id = path[-2]
+    contest_id = path[-2] if path[-2] != 'problem' else path[-3]
     problem_id = path[-1]
     name = re.search(r'<div class=\"title\">[A-Z]\. ([\w \-\.]+?)</div>', get(url)).group(1)
     return f'{contest_id}{problem_id} - {name}'
