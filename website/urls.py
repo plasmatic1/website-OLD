@@ -31,5 +31,5 @@ urlpatterns = [
     path('logout/', logout_user, name='logout'),
 
     # Other utility things
-    path('login_as_guest/', login_as_guest, name='login_as_guest')
+    path('login_as_guest/', login_as_guest, name='login_as_guest'),
 ]

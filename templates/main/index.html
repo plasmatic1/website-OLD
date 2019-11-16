@@ -5,15 +5,102 @@
 {% block header %} Hello! {% endblock %}
 
 {% block body %}
-    <p>This website is currently under construction, though the <a href="{% url 'dmojsolutions:index' %}">DM::OJ solution list</a> is already working.</p>
+    {% load static %}
 
-    <h1>Hi!</h1>
+    <div class="col">
+{#        INTRO#}
+        <div class="row">
+            <div class="col col-5">
+                <p>
+                    My name is Moses and I'm a Grade 11 student currently attending Appleby College.  I've been coding since I was young
+                </p>
+                <p>
+                    Some of my other hobbies include playing the piano and
+                </p>
+            </div>
+            <div class="col col-2">
+                <img class="rounded mt-3" src="{% static 'profile-comp2.png' %}" width="80%" height="100%"/>
+            </div>
+            <div class="col col-5">
+                {#                Spacing#}
+            </div>
+        </div>
 
-    <h1>About Me</h1>
+{#        PROJECTS#}
+        <div class="row">
+            <h1>Projects</h1>
 
-    <h1>Projects</h1>
+            <div class="col">
+                <div class="row">
 
-    <h1>Resume</h1>
+                </div>
+                <div class="row">
 
-    <h1>Contact Me</h1>
+                </div>
+                <div class="row">
+
+                </div>
+            </div>
+            <div class="col">
+                <div class="row">
+
+                </div>
+                <div class="row">
+
+                </div>
+                <div class="row">
+
+                </div>
+            </div>
+            <div class="col">
+                <div class="row">
+
+                </div>
+                <div class="row">
+
+                </div>
+                <div class="row">
+
+                </div>
+            </div>
+        </div>
+
+{#        RESUME#}
+        <div class="row">
+            <h1>Resume</h1>
+        </div>
+        <div class="row">
+            <object width="400" height="500" type="application/pdf"
+                    data="{% static 'resume.pdf' %}">
+                <p>The document could not be loaded, sorry for the inconvenience.</p>
+            </object>
+        </div>
+
+{#        CONTEST PERFORMANCE#}
+        <div class="row">
+            <h1>Contest Performance</h1>
+        </div>
+        <div class="row">
+
+        </div>
+
+{#        CONTACTS#}
+        <div class="row">
+            <h1>Contacts and Profiles</h1>
+        </div>
+        <div class="row">
+            <p>Github: <a href="https://github.com/plasmatic1">plasmatic1</a></p>
+        </div>
+        <div class="row">
+            <p>Discord: <a href="https://discordapp.com/users/181462351231320064">@Plasmatic#6581</a></p>
+        </div>
+
+        <div class="row">
+            <p>Email: <a href="mailto:moses@mosesxu.net">moses@mosesxu.net</a></p>
+        </div>
+
+        {#        <p>DM::OJ: <a href="https://dmoj.ca/user/Plasmatic">Plasmatic</a></p>#}
+        {#            <p>Codeforces: <a href="https://codeforces.com/profile/Plasmatic">Plasmatic</a></p>#}
+        {#            <p>Atcoder: </p>#}
+    </div>
 {% endblock %}

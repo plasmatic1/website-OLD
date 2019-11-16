@@ -12,6 +12,12 @@
                 <a class="nav-link" href="{% url 'main:index' %}">Home</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="{% url 'main:resume' %}">Resume</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'main:projects_and_contests' %}">Projects and Contests</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="{% url 'todolist:index' %}">Todo-List</a>
             </li>
             <li class="nav-item">
@@ -19,9 +25,6 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'otherapps:index' %}">Fun Apps</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Contact Me</a>
             </li>
 
             {% block nav-extra %} {% endblock %}
