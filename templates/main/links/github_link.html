@@ -1,0 +1,11 @@
+{#Button-Link that links to a Github repository#}
+{#href -> Link HREF#}
+{#label -> Label of the button (or "Github Repo" if this param is left out)#}
+
+<a href="{{ href }}" class="btn btn-outline-secondary"><i class="fa fa-github"></i> &nbsp;
+    {% if label %}
+        {{ label }}
+    {% else %}
+        GitHub Repo
+    {% endif %}
+</a>

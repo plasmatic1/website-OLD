@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %} My Resume {% endblock %}
+{% block header %} Resume {% endblock %}
+{% block page_name %} resume {% endblock %}
+
+{% block body %}
+    {% load static %}
+
+    <div class="row mb-5">
+        <object width="850" height="1050" type="application/pdf"
+                data="{% static 'resume.pdf' %}">
+            <p>The document could not be loaded, sorry for the inconvenience.</p>
+        </object>
+    </div>
+{% endblock %}

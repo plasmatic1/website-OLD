@@ -1,0 +1,162 @@
+{% load static %}
+
+<div class="row mb-3 mt-5">
+    <h1>Projects</h1>
+</div>
+
+<div class="row" id="projects">
+    <div class="row mb-4">
+        <div class="col col-4">
+            <div class="card bg-light">
+                <img src="{% static 'project-pics/cptools.png' %}" class="card-img-top" alt="The CP Tools UI">
+                <div class="card-body">
+                    <h5 class="card-title">CP Tools</h5>
+                    <p class="card-text">An extension for VSCode that tailors it for Competitive Programming.
+                        Currently includes a easy way to test your program on inputs and conversion of template
+                        code to VSCode snippets. Currently planned features include integration with GDB for
+                        debugging along with a redesign of the UI. Made using TypeScript and Vue.</p>
+
+                    <p class="note">Note: Rework is still in development, UI depicted is not final.</p>
+
+                    {% include 'main/links/github_link.html' with href="https://github.com/plasmatic1/cp-tools" %}
+                </div>
+            </div>
+        </div>
+        <div class="col col-4">
+            <div class="card bg-light">
+                <img src="{% static 'project-pics/betterweb.png' %}" class="card-img-top"
+                     alt="The BetterWeb Extension in Action">
+                <div class="card-body">
+                    <h5 class="card-title">BetterWeb</h5>
+                    <p class="card-text">This is a project I'm undertaking with some school friends and is a
+                        Chrome Extension meant to detect bias in online news articles through literary analysis
+                        of their headlines. A collection of headlines are first assigned biases (far left, left,
+                        neutral, right, far right, nonpolitical) and then are used as training data for a
+                        Neutral Network which is finally used to predict the bias of other headlines.</p>
+
+                    <div class="mb-1">
+                        {% include 'main/links/github_link.html' with href="https://github.com/betterweb-team/BetterWeb" label="Chrome Extension Repo" %}
+                    </div>
+                    <div class="mb-1">
+                        {% include 'main/links/github_link.html' with href="https://github.com/betterweb-team/betterweb-backend" label="Training Repo" %}
+                    </div>
+                    <div>
+                        {% include 'main/links/github_link.html' with href="https://github.com/betterweb-team/betterwebvote" label="Data Collection Repo" %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col col-4">
+            <div class="card bg-light">
+                <img src="{% static 'project-pics/onlinejudgesolutions.png' %}" class="card-img-top"
+                     alt="Some Popular Online Judges">
+                <div class="card-body">
+                    <h5 class="card-title">Online Judge Solutions</h5>
+                    <p class="card-text">A List of my online judge solutions. There is also a webapp to view the
+                        DM::OJ solutions in a more reasonable manner. (searching by problem name, solutions
+                        displayed alongside problem statements, etc.)</p>
+
+                    <div class="mb-1">
+                        {% include 'main/links/link.html' with href="/dmojsols" label="DM::OJ Solutions" %}
+                    </div>
+                    <div class="mb-1">
+                        {% include 'main/links/github_link.html' with href="https://github.com/plasmatic1/dmoj-solutions" label="DM::OJ Solutions Repo" %}
+                    </div>
+                    <div>
+                        {% include 'main/links/github_link.html' with href="https://github.com/plasmatic1/other-judges" label="Other Judges Repo" %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mb-4">
+        <div class="col col-4">
+            <div class="card bg-light">
+                <img src="{% static 'project-pics/website.jpg' %}" class="card-img-top"
+                     alt="A Cartoon of a Website">
+                <div class="card-body">
+                    <h5 class="card-title">Personal Website</h5>
+                    <p class="card-text">What you're looking at right now! This website was created using Django
+                        and hosts various Web Applications alongside my personal profile. Feel free to take a
+                        look around!</p>
+
+                    <div class="mb-1">
+                        {% include 'main/links/link.html' with href="/" label="Link?" %}
+                    </div>
+                    <div>
+                        {% include 'main/links/github_link.html' with href="https://github.com/plasmatic1/website" %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col col-4">
+            <div class="card bg-light">
+                <img src="{% static 'project-pics/vexrobotics.jpg' %}" class="card-img-top"
+                     alt="Our Beloved VEX Robotics Robot">
+                <div class="card-body">
+                    <h5 class="card-title">VEX Robotics (2018-2019)</h5>
+                    <p class="card-text">A repository that stores all of the software used for our robot in the
+                        2018-2019 VEX Robotics Turning Point game. It also contains some images of the robot if
+                        you want to see :)</p>
+                    {% include 'main/links/github_link.html' with href="https://github.com/farazkaleemmalik/VEX-robotics-2018-19" %}
+                </div>
+            </div>
+        </div>
+        <div class="col col-4">
+            <div class="card bg-light">
+                <img src="{% static 'project-pics/discordchat.png' %}" class="card-img-top"
+                     alt="The Chat Bridge in Action">
+                <div class="card-body">
+                    <h5 class="card-title">DiscordChat</h5>
+                    <p class="card-text">A Spigot (Minecraft Server) plugin that functions as a way for
+                        players on discord to directly chat with players on a Minecraft Server. It also includes
+                        a few utility and administrative commands for players. Made using Java.</p>
+                    {% include 'main/links/gitlab_link.html' with href="https://gitlab.com/FrostTaco/DiscordChat" %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mb-4">
+        <div class="col col-4">
+            <div class="card bg-light">
+                <img src="{% static 'project-pics/kitsplus.png' %}" class="card-img-top"
+                     alt="A Cartoon of a Website">
+                <div class="card-body">
+                    <h5 class="card-title">KitsPlus</h5>
+
+                    <p class="card-text">A Spigot (Minecraft Server) plugin that works as a Kit management
+                        system for the KitPVP minigame (which is where players can select one of many kits and
+                        duel each other with them). Made using Kotlin.</p>
+
+                    <p class="note">Note: Image is old and UI has been since modified</p>
+
+                    {% include 'main/links/github_link.html' with href="https://github.com/plasmatic1/kitsplus2" %}
+                </div>
+            </div>
+        </div>
+        <div class="col col-4">
+            <div class="card bg-light">
+                <img src="{% static 'project-pics/trigdrills.png' %}" class="card-img-top"
+                     alt="Trig Drills Program">
+                <div class="card-body">
+                    <h5 class="card-title">Trig Drills</h5>
+                    <p class="card-text">A simple python program that allows you to practice Trig Drills (i.e.
+                        what is cos(120 degrees)). Made using Tkinter.</p>
+                    {% include 'main/links/github_link.html' with href="https://github.com/plasmatic1/Trig-Drills" %}
+                </div>
+            </div>
+        </div>
+        <div class="col col-4">
+            <div class="card bg-light">
+                <img src="{% static 'project-pics/ourtube.png' %}" class="card-img-top" alt="OurTube in Action">
+                <div class="card-body">
+                    <h5 class="card-title">OurTube</h5>
+                    <p class="card-text">A Spotify-esque music playing service that uses YouTube as the source
+                        of audio. Built with React.js along with a few other libraries for UI, web requests,
+                        and interacting with YouTube</p>
+                    {% include 'main/links/github_link.html' with href="https://github.com/plasmatic1/ourtube" %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

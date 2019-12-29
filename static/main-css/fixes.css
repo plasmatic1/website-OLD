@@ -1,0 +1,21 @@
+.table-layout-only tr td, .table-layout-only tr th {
+  padding: 5px;
+}
+
+.container {
+  max-width: 85% !important;
+}
+
+.container {
+  max-width: 1500px;
+}
+
+.form-group.is-invalid .invalid-feedback {
+  display: block;
+}
+
+pre {
+  color: rgba(255, 63, 113, 0.99);
+}
+
+/*# sourceMappingURL=fixes.css.map */

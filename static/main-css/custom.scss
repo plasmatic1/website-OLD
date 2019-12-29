@@ -1,0 +1,90 @@
+// So that messages float to the bottom
+#messages-div {
+  position: fixed;
+  bottom: 1em;
+  left: 1em;
+
+  // So the messages div doesn't cover the entire bottom
+  max-width: 25% !important;
+}
+
+// text-warning is too light
+.text-warning2 {
+  color: #c19000;
+}
+
+// Basically like a note (i.e. "Note: This image is old")
+.note {
+  font-style: italic;
+  color: mix(#656565, yellow, 75%);
+}
+
+// DM::OJ-sols View HTML
+$pdf-height: 1000px;
+$pdf-width: 800px;
+
+.view-table {
+  tr {
+    td {
+      vertical-align: top;
+      resize: both;
+      overflow: auto;
+    }
+
+    td.view-code {
+      width: 100%;
+      code {
+        height: 10px;
+      }
+      overflow: scroll;
+    }
+
+    td.view-problem embed {
+      height: $pdf-height;
+      width: $pdf-width;
+    }
+  }
+}
+
+// Navbar stuff
+//nav {
+//  padding-top: 0 !important;
+//  padding-bottom: 0 !important;
+//}
+//
+//.nav-item {
+//  min-height: 100% !important;
+//  //border: 1px solid red;
+//
+//  a {
+//    min-height: 100% !important;
+//    line-height: 200% !important;
+//  }
+//}
+
+//$admin-color: #f1af10;
+//.light-admin-background {
+//  color: $admin-color !important;
+//  background-color: lighten($admin-color, 40%);
+//  transition: 0.5s;
+//}
+//
+//@mixin admin-color {
+//  color: darken($admin-color, 10%) !important;
+//  background-color: lighten($admin-color, 20%);
+//}
+//
+//.light-active-background.light-admin-background {
+//  @include admin-color;
+//}
+//
+//.light-admin-background:hover {
+//  @include admin-color;
+//  transition: 0.5s;
+//}
+//
+//.light-active-background {
+//  color: #000 !important;
+//  background-color: #dcdcdc;
+//  transition: 0.5s;
+//}

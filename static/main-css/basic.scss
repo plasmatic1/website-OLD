@@ -1,0 +1,21 @@
+// Universal Styling for basic things
+$block-margin: 15px;
+$block-padding: 10px;
+$button-padding: 7px;
+
+// -------------------------
+// BASIC GLOBAL STYLING
+// -------------------------
+
+*:not(code) {
+  font-family: 'Ubuntu', 'Calibri', 'Helvetica', 'Arial', sans-serif;
+}
+
+code {
+  font-family: 'Consolas', monospace;
+}
+
+h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 5px;
+}

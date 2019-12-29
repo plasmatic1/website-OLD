@@ -16,9 +16,17 @@
 
     {#    LOADING CSS#}
     {% load static %}
-    <link rel="stylesheet" href="{% static 'main.css' %}">
+    <link rel="stylesheet" href="{% static 'main-css/basic.css' %}">
+    {# Basic and Global Changes #}
+    <link rel="stylesheet" href="{% static 'main-css/fixes.css' %}">
+    {# Fixes for Existing Classes and Elements #}
+    <link rel="stylesheet" href="{% static 'main-css/custom.css' %}">
+    {# Custom Classes and IDs #}
+
     <link rel="stylesheet" href="{% static 'header.css' %}">
+    {# CSS for Header (NavBar) #}
     <link rel="stylesheet" href="{% static 'forms.css' %}">
+    {# CSS for Forms #}
 
     {#    EXTRA HEAD STUFF#}
     {% block head-extra %} {% endblock %}
@@ -34,19 +42,16 @@
 
 {#Page body#}
 <div class="body">
-    {#    LOADING JQUERY#}
+    {# Loading JQuery #}
     <script
             src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
             integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
             crossorigin="anonymous"></script>
 
-    {#    LOADING BOOTSTRAP#}
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-                integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-                crossorigin="anonymous"></script>
-{#    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"#}
-{#            integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o"#}
-{#            crossorigin="anonymous"></script>#}
+    {# Loading Bootstrap #}
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
 
     <div class="container">
         {#Header#}
@@ -67,10 +72,10 @@
 
 {#    Extra Scripts for Stuff#}
 <script>
-    {#var pageName = '{% spaceless %}{% block page_name %}{% endblock %}{% endspaceless %}';#}
-    {#$('#' + pageName)#}
-    {#    .addClass('active')#}
-    {#    .addClass('light-active-background');#}
+    var pageName = '{% spaceless %}{% block page_name %}{% endblock %}{% endspaceless %}';
+    $('#' + pageName)
+        .addClass('active')
+        .addClass('light-active-background');
 
     // Add "novalidate" to all forms so that the Bootstrap validation is used instead of the ugly HTML one
     $('form').attr('novalidate', 'novalidate')

@@ -1,0 +1,34 @@
+#messages-div {
+  position: fixed;
+  bottom: 1em;
+  left: 1em;
+  max-width: 25% !important;
+}
+
+.text-warning2 {
+  color: #c19000;
+}
+
+.note {
+  font-style: italic;
+  color: #8c8c4c;
+}
+
+.view-table tr td {
+  vertical-align: top;
+  resize: both;
+  overflow: auto;
+}
+.view-table tr td.view-code {
+  width: 100%;
+  overflow: scroll;
+}
+.view-table tr td.view-code code {
+  height: 10px;
+}
+.view-table tr td.view-problem embed {
+  height: 1000px;
+  width: 800px;
+}
+
+/*# sourceMappingURL=custom.css.map */
