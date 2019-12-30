@@ -1,13 +1,22 @@
 {% load static %}
 
-<div class="row mb-3 mt-5">
+{# ..... Spacers #}
+<div class="row mt-4"></div>
+<div class="row mt-4"></div>
+<div class="row mt-4"></div>
+<div class="row mt-4"></div>
+<div class="row mt-4"></div>
+
+{# Actual HTML #}
+<div class="row mt-5">
     <h1>Projects</h1>
 </div>
+{% include 'widgets/spacer.html' %}
 
 <div class="row" id="projects">
     <div class="row mb-4">
         <div class="col col-4">
-            <div class="card bg-light">
+            <div class="card bg-light project-card">
                 <img src="{% static 'project-pics/cptools.png' %}" class="card-img-top" alt="The CP Tools UI">
                 <div class="card-body">
                     <h5 class="card-title">CP Tools</h5>
@@ -23,7 +32,7 @@
             </div>
         </div>
         <div class="col col-4">
-            <div class="card bg-light">
+            <div class="card bg-light project-card">
                 <img src="{% static 'project-pics/betterweb.png' %}" class="card-img-top"
                      alt="The BetterWeb Extension in Action">
                 <div class="card-body">
@@ -47,7 +56,7 @@
             </div>
         </div>
         <div class="col col-4">
-            <div class="card bg-light">
+            <div class="card bg-light project-card">
                 <img src="{% static 'project-pics/onlinejudgesolutions.png' %}" class="card-img-top"
                      alt="Some Popular Online Judges">
                 <div class="card-body">
@@ -71,7 +80,7 @@
     </div>
     <div class="row mb-4">
         <div class="col col-4">
-            <div class="card bg-light">
+            <div class="card bg-light project-card">
                 <img src="{% static 'project-pics/website.jpg' %}" class="card-img-top"
                      alt="A Cartoon of a Website">
                 <div class="card-body">
@@ -90,7 +99,7 @@
             </div>
         </div>
         <div class="col col-4">
-            <div class="card bg-light">
+            <div class="card bg-light project-card">
                 <img src="{% static 'project-pics/vexrobotics.jpg' %}" class="card-img-top"
                      alt="Our Beloved VEX Robotics Robot">
                 <div class="card-body">
@@ -103,7 +112,7 @@
             </div>
         </div>
         <div class="col col-4">
-            <div class="card bg-light">
+            <div class="card bg-light project-card">
                 <img src="{% static 'project-pics/discordchat.png' %}" class="card-img-top"
                      alt="The Chat Bridge in Action">
                 <div class="card-body">
@@ -118,7 +127,7 @@
     </div>
     <div class="row mb-4">
         <div class="col col-4">
-            <div class="card bg-light">
+            <div class="card bg-light project-card">
                 <img src="{% static 'project-pics/kitsplus.png' %}" class="card-img-top"
                      alt="A Cartoon of a Website">
                 <div class="card-body">
@@ -135,7 +144,7 @@
             </div>
         </div>
         <div class="col col-4">
-            <div class="card bg-light">
+            <div class="card bg-light project-card">
                 <img src="{% static 'project-pics/trigdrills.png' %}" class="card-img-top"
                      alt="Trig Drills Program">
                 <div class="card-body">
@@ -147,7 +156,7 @@
             </div>
         </div>
         <div class="col col-4">
-            <div class="card bg-light">
+            <div class="card bg-light project-card">
                 <img src="{% static 'project-pics/ourtube.png' %}" class="card-img-top" alt="OurTube in Action">
                 <div class="card-body">
                     <h5 class="card-title">OurTube</h5>

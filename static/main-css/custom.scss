@@ -19,7 +19,16 @@
   color: mix(#656565, yellow, 75%);
 }
 
+// Extra Padding and Stuff to project cards
+.project-card {
+  margin: 1em;
+}
+
+
+// -------------------------------
 // DM::OJ-sols View HTML
+// -------------------------------
+
 $pdf-height: 1000px;
 $pdf-width: 800px;
 
@@ -46,7 +55,10 @@ $pdf-width: 800px;
   }
 }
 
-// Navbar stuff
+// -------------------------------
+// Navbar Stuff
+// -------------------------------
+
 //nav {
 //  padding-top: 0 !important;
 //  padding-bottom: 0 !important;
