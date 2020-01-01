@@ -1,0 +1,769 @@
+{% load static %}
+
+<script>
+    /*
+    {
+        name: 'Contest name',
+        type: 'judge (i.e. dmoj, cf, atcoder, mcpt)',
+        placement: '(Number) rank in contest',
+        totalPlacement: '(Number) total # of participants',
+        placementInfo: '(Optional) Any extra info about the placement given (i.e. only rated users)',
+        score: '(Number) Raw score',
+        totalScore: '(Number) Total possible points',
+        link: 'Link to scoreboard (or photo of it)',
+        date: {
+            month: 'Month (i.e. January, February)',
+            day: '(Number) the day (i.e. 23, 16, 4)'
+        },
+        groups: ['(Optional)', 'array of groups this contest belongs to', 'available groups are currently: official, highlight']
+    }
+     */
+
+    const CONTESTS = {
+        2020: [
+
+        ],
+        2019: [
+            {
+                name: 'DMOPC \'19 December Contest',
+                type: 'dmoj',
+                placement: 18,
+                totalPlacement: 208,
+                placementInfo: 'Not Rated Yet',
+                score: 395,
+                totalScore: 630,
+                link: 'https://dmoj.ca/contest/dmopc19c4/ranking/',
+                date: {
+                    month: 'December',
+                    day: 30
+                }
+            },
+            {
+                name: 'Educational Codeforces Round 79 (Div. 2)',
+                type: 'cf',
+                placement: 363,
+                totalPlacement: 7079,
+                placementInfo: 'Division 2',
+                score: 4,
+                totalScore: 6,
+                link: 'https://codeforces.com/contest/1279/standings/2/participant/31341378#p31341378',
+                date: {
+                    month: 'December',
+                    day: 27
+                },
+                groups: ['highlight']
+            },
+            {
+                name: 'Codeforces Global Round 6',
+                type: 'cf',
+                placement: 526,
+                totalPlacement: 5721,
+                score: 4138,
+                totalScore: 16250,
+                link: 'https://codeforces.com/contest/1266/standings/participant/31010395#p31010395',
+                date: {
+                    month: 'December',
+                    day: 17
+                },
+                groups: ['highlight']
+            },
+            {
+                name: 'USACO December Contest 2019 - Silver',
+                type: 'usaco',
+                placement: 358,
+                totalPlacement: 2299,
+                score: 667,
+                totalScore: 1000,
+                link: 'http://usaco.org/current/data/dec19_silver_results.html',
+                date: {
+                    month: 'December',
+                    day: 13
+                },
+                groups: ['official']
+            },
+            {
+                name: 'Moose \'19 Contest 3 - Senior',
+                type: 'mcpt',
+                placement: 6,
+                totalPlacement: 42,
+                score: 473,
+                totalScore: 700,
+                link: 'https://mcpt.ca/contest/moose19c3s/ranking/',
+                date: {
+                    month: 'December',
+                    day: 13
+                },
+                groups: ['official']
+            },
+            {
+                name: 'GlobeX Cup \'19 - Senior',
+                type: 'dmoj',
+                placement: 22,
+                totalPlacement: 93,
+                score: 217,
+                totalScore: 500,
+                link: 'https://dmoj.ca/contest/globexcup19s/ranking/',
+                date: {
+                    month: 'December',
+                    day: 9
+                },
+                groups: ['official']
+            },
+            {
+                name: 'DMOPC \'19 November Contest',
+                type: 'dmoj',
+                placement: 11,
+                totalPlacement: 184,
+                score: 480,
+                totalScore: 360,
+                link: 'https://dmoj.ca/contest/dmopc19c3/ranking/',
+                date: {
+                    month: 'December',
+                    day: 2
+                },
+                groups: ['highlight']
+            },
+
+            {
+                name: 'Moose \'19 Contest 2 - Senior',
+                type: 'mcpt',
+                placement: 1,
+                totalPlacement: 37,
+                score: 590,
+                totalScore: 700,
+                link: 'https://mcpt.ca/contest/moose19c2s/ranking/',
+                date: {
+                    month: 'November',
+                    day: 22
+                },
+                groups: ['official', 'highlight']
+            },
+            {
+                name: 'Codeforces Round 601 (Div. 2)',
+                type: 'cf',
+                placement: 809,
+                totalPlacement: 6011,
+                score: 2268,
+                totalScore: 9750,
+                link: 'https://codeforces.com/contest/1255/standings/participant/30167553#p30167553',
+                date: {
+                    month: 'November',
+                    day: 19
+                }
+            },
+            {
+                name: 'Codeforces Round 600 (Div. 2)',
+                type: 'cf',
+                placement: 333,
+                totalPlacement: 6251,
+                score: 3978,
+                totalScore: 9750,
+                link: 'https://codeforces.com/contest/1253/standings/participant/30088604#p30088604',
+                date: {
+                    month: 'November',
+                    day: 16
+                }
+            },
+            {
+                name: 'Educational Codeforces Round 76',
+                type: 'cf',
+                placement: 449,
+                totalPlacement: 7153,
+                score: 4,
+                totalScore: 7,
+                link: 'https://codeforces.com/contest/1257/standings/2/participant/29982859#p29982859',
+                date: {
+                    month: 'November',
+                    day: 13
+                },
+                groups: ['highlight']
+            },
+
+            {
+                name: 'Google Kickstart Round G',
+                type: 'google',
+                placement: 406,
+                totalPlacement: 3382,
+                score: 77,
+                totalScore: 100,
+                link: '{% static "contest-placement-pictures/google19.png" %}',
+                date: {
+                    month: 'October',
+                    day: 19
+                },
+                groups: ['official']
+            },
+            {
+                name: 'AtCoder Beginner Contest 143',
+                type: 'atcoder',
+                placement: 190,
+                totalPlacement: 4803,
+                placementInfo: 'Rated',
+                score: 1500,
+                totalScore: 2100,
+                link: 'https://atcoder.jp/contests/abc143/standings?watching=Plasmatic',
+                date: {
+                    month: 'October',
+                    day: '19'
+                },
+                groups: ['highlight']
+            },
+            {
+                name: 'Moose \'19 Contest 1 - Senior',
+                type: 'mcpt',
+                placement: 1,
+                totalPlacement: 15,
+                score: 654,
+                totalScore: 700,
+                link: 'https://mcpt.ca/contest/moose19c1s/ranking/',
+                date: {
+                    month: 'October',
+                    day: 16
+                },
+                groups: ['official', 'highlight']
+            },
+            {
+                name: 'DMOPC \'19 October Contest',
+                type: 'dmoj',
+                placement: 7,
+                totalPlacement: 157,
+                score: 500,
+                totalScore: 630,
+                link: 'https://dmoj.ca/contest/dmopc19c2/ranking/',
+                date: {
+                    month: 'October',
+                    day: 14
+                },
+                groups: ['highlight']
+            },
+
+            {
+                name: 'DMOPC \'19 September Contest',
+                type: 'dmoj',
+                placement: 33,
+                totalPlacement: 123,
+                score: 255,
+                totalScore: 630,
+                link: 'https://dmoj.ca/contest/dmopc19c1/ranking/',
+                date: {
+                    month: 'September',
+                    day: 16
+                }
+            },
+            {
+                name: 'Back to School \'19 Contest',
+                type: 'dmoj',
+                placement: 16,
+                totalPlacement: 124,
+                score: 415,
+                totalScore: 800,
+                link: 'https://dmoj.ca/contest/bts19/ranking/',
+                date: {
+                    month: 'September',
+                    day: 9
+                }
+            },
+            {
+                name: 'Educational Codeforces Round 72 (Div. 2)',
+                type: 'cf',
+                placement: 1120,
+                totalPlacement: 6868,
+                score: 3,
+                totalScore: 6,
+                link: 'https://codeforces.com/contest/1217/standings/2/participant/27795224#p27795224',
+                date: {
+                    month: 'September',
+                    day: 5
+                }
+            },
+            {
+                name: 'Back from Summer \'19 Contest',
+                type: 'dmoj',
+                placement: 17,
+                totalPlacement: 103,
+                score: 330,
+                totalScore: 600,
+                link: 'https://dmoj.ca/contest/bfs19/ranking/',
+                date: {
+                    month: 'September',
+                    day: 3
+                }
+            },
+
+            {
+                name: 'Educational Codeforces Round 71 (Div. 2)',
+                type: 'cf',
+                placement: 431,
+                totalPlacement: 7582,
+                placementInfo: 'Division 2',
+                score: 5,
+                totalScore: 7,
+                link: 'https://codeforces.com/contest/1207/standings/2/participant/27401850#p27401850',
+                date: {
+                    month: 'August',
+                    day: 22
+                }
+            },
+            {
+                name: 'Codeforces Round 580 (Div. 2)',
+                type: 'cf',
+                placement: 140,
+                totalPlacement: 7393,
+                score: 3801,
+                totalScore: 10000,
+                link: 'https://codeforces.com/contest/1206/standings/participant/27265163#p27265163',
+                date: {
+                    month: 'August',
+                    day: 18
+                },
+                groups: ['highlight']
+            },
+            {
+                name: 'AtCoder Beginner Contest 138',
+                type: 'atcoder',
+                placement: 433,
+                totalPlacement: 5107,
+                placementInfo: 'Rated',
+                score: 5,
+                totalScore: 6,
+                link: 'https://atcoder.jp/contests/abc138/standings?watching=Plasmatic',
+                date: {
+                    month: 'August',
+                    day: 18
+                }
+            },
+            {
+                name: 'Educational Codeforces Round 70 (Div. 2)',
+                type: 'cf',
+                placement: 318,
+                totalPlacement: 4062,
+                placementInfo: 'Division 2',
+                score: 3,
+                totalScore: 6,
+                link: 'https://codeforces.com/contest/1202/standings/2/participant/27010154#p27010154',
+                date: {
+                    month: 'August',
+                    day: 7
+                }
+            },
+
+            {
+                name: 'AtCoder Beginner Contest 135',
+                type: 'atcoder',
+                placement: 241,
+                totalPlacement: 4400,
+                placementInfo: 'Rated',
+                score: 4,
+                totalScore: 6,
+                link: 'https://atcoder.jp/contests/abc135/standings?watching=Plasmatic',
+                date: {
+                    month: 'July',
+                    day: 27
+                }
+            },
+            {
+                name: 'Another Contest 5',
+                type: 'dmoj',
+                placement: 13,
+                totalPlacement: 76,
+                placementInfo: 'Bugged',
+                score: 5,
+                totalScore: 7,
+                link: 'https://dmoj.ca/contest/acc5/ranking/',
+                date: {
+                    month: 'July',
+                    day: 22
+                }
+            },
+            {
+                name: 'Educational Codeforces Round 68 (Div. 2)',
+                type: 'cf',
+                placement: 1330,
+                totalPlacement: 5859,
+                score: 3,
+                totalScore: 7,
+                link: 'https://codeforces.com/contest/1194/standings/2/participant/26369119#p26369119',
+                date: {
+                    month: 'July',
+                    day: 14
+                }
+            },
+
+            {
+                name: 'Facebook HackerCup 2019 Round 1',
+                type: 'facebook',
+                placement: 1904,
+                totalPlacement: 2490,
+                score: 1,
+                totalScore: 4,
+                link: '{% static "contest-placement-pictures/fhc19r1.png" %}',
+                date: {
+                    month: 'June',
+                    day: 29
+                }
+            },
+            {
+                name: 'Facebook HackerCup 2019 Qualification Round',
+                type: 'facebook',
+                placement: 4302,
+                totalPlacement: 6539,
+                score: 1,
+                totalScore: 4,
+                link: '{% static "contest-placement-pictures/fhc19qualifier.png" %}',
+                date: {
+                    month: 'June',
+                    day: 14
+                }
+            },
+            {
+                name: 'Triway Cup \'19 Summer',
+                type: 'dmoj',
+                placement: 2,
+                totalPlacement: 23,
+                placementInfo: 'Onsite, Official',
+                score: 400,
+                totalScore: 800,
+                link: 'https://dmoj.ca/contest/tc19summers/ranking/',
+                date: {
+                    month: 'June',
+                    day: 9
+                },
+                groups: ['official', 'highlight']
+            },
+
+            {
+                name: 'Woburn Finals \'19 - Junior',
+                type: 'peg',
+                placement: 5,
+                totalPlacement: 12,
+                score: 74,
+                totalScore: 100,
+                link: '{% static "contest-placement-pictures/wc19finalsjr.png" %}',
+                date: {
+                    month: 'May',
+                    day: 18
+                },
+                groups: ['official']
+            },
+            {
+                name: 'Codeforces Round 561 (Div. 2)',
+                type: 'cf',
+                placement: 433,
+                totalPlacement: 4625,
+                score: 2780,
+                totalScore: 10750,
+                link: 'https://codeforces.com/contest/1166/standings/participant/25087982#p25087982',
+                date: {
+                    month: 'May',
+                    day: 17
+                }
+            },
+
+            {
+                name: 'Google Code Jam 2019 Round 1B',
+                type: 'google',
+                placement: 1431,
+                totalPlacement: 6571,
+                score: 51,
+                totalScore: 100,
+                link: '{% static "contest-placement-pictures/google19.png" %}',
+                date: {
+                    month: 'April',
+                    day: 28
+                },
+                groups: ['official']
+            },
+            {
+                name: 'DMPG \'19 - Silver',
+                type: 'dmoj',
+                placement: 1,
+                totalPlacement: 43,
+                placementInfo: 'Onsite',
+                score: 370,
+                totalScore: 600,
+                link: '{% static "contest-placement-pictures/dmpg19s.png" %}',
+                date: {
+                    month: 'April',
+                    day: 25
+                },
+                groups: ['official', 'highlight']
+            },
+            {
+                name: 'Google Code Jam 2019 Round 1A',
+                type: 'google',
+                placement: 3163,
+                totalPlacement: 4807,
+                score: 18,
+                totalScore: 100,
+                link: '{% static "contest-placement-pictures/google19.png" %}',
+                date: {
+                    month: 'April',
+                    day: 12
+                },
+                groups: ['official']
+            },
+            {
+                name: 'Google Code Jam 2019 Qualification Round',
+                type: 'google',
+                placement: 2277,
+                totalPlacement: 31664,
+                score: 66,
+                totalScore: 100,
+                link: '{% static "contest-placement-pictures/google19.png" %}',
+                date: {
+                    month: 'April',
+                    day: 5
+                },
+                groups: ['official', 'highlight']
+            },
+
+            {
+                name: 'Codeforces Round 548 (Div. 2)',
+                type: 'cf',
+                placement: 2207,
+                totalPlacement: 5593,
+                score: 1436,
+                totalScore: 11000,
+                link: 'https://codeforces.com/contest/1139/standings/participant/23875844#p23875844',
+                date: {
+                    month: 'March',
+                    day: 21
+                }
+            },
+            {
+                name: 'DMOPC \'18 March Contest',
+                type: 'dmoj',
+                placement: 20,
+                totalPlacement: 96,
+                score: 450,
+                totalScore: 530,
+                link: 'https://dmoj.ca/contest/dmopc18c6/ranking/',
+                date: {
+                    month: 'March',
+                    day: 13
+                }
+            },
+
+            {
+                name: 'USACO Febuary Contest 2019 - Bronze',
+                type: 'usaco',
+                placement: 1,
+                totalPlacement: 2162,
+                score: 1000,
+                totalScore: 1000,
+                link: 'http://www.usaco.org/current/data/feb19_bronze_results.html',
+                date: {
+                    month: 'February',
+                    day: '??'
+                },
+                groups: ['official', 'highlight']
+            },
+            {
+                name: 'CCC 2019 - Senior',
+                type: 'uwaterloo',
+                placement: 435,
+                totalPlacement: 2719,
+                score: 33,
+                totalScore: 75,
+                link: 'https://cemc.uwaterloo.ca/contests/computing/2019/stage%201/2019CCCResults.pdf',
+                date: {
+                    month: 'February',
+                    day: 20
+                },
+                groups: ['official']
+            },
+            {
+                name: 'DMOPC \'18 Febuary Contest',
+                type: 'dmoj',
+                placement: 19,
+                totalPlacement: 162,
+                score: 480,
+                totalScore: 630,
+                link: 'https://dmoj.ca/contest/dmopc18c5/ranking/',
+                date: {
+                    month: 'February',
+                    day: 19
+                },
+                groups: ['highlight']
+            },
+            {
+                name: 'Valentines \'19 Senior',
+                type: 'dmoj',
+                placement: 35,
+                totalPlacement: 133,
+                score: 205,
+                totalScore: 500,
+                link: 'https://dmoj.ca/contest/valentines19s/ranking/',
+                date: {
+                    month: 'February',
+                    day: 17
+                }
+            }
+        ],
+        2018: [
+            {
+                name: 'LKP \'18 Contest 2',
+                type: 'dmoj',
+                placement: 41,
+                totalPlacement: 120,
+                score: 330,
+                totalScore: 600,
+                link: 'https://dmoj.ca/contest/lkp18c2/ranking/',
+                date: {
+                    month: 'December',
+                    day: 31
+                }
+            },
+            {
+                name: 'Moose \'18 - Senior',
+                type: 'mcpt',
+                placement: 6,
+                totalPlacement: 48,
+                score: 369,
+                totalScore: 700,
+                link: 'https://mcpt.ca/contest/moose18s/ranking/',
+                date: {
+                    month: 'December',
+                    day: 18
+                },
+                groups: ['official']
+            },
+            {
+                name: 'GlobeX Cup \'18 - Senior',
+                type: 'dmoj',
+                placement: 10,
+                totalPlacement: 40,
+                score: 500,
+                totalScore: 500,
+                link: 'https://dmoj.ca/contest/globex18senior/ranking/',
+                date: {
+                    month: 'December',
+                    day: 16
+                },
+                groups: ['official']
+            },
+            {
+                name: 'DMOPC \'18 December Contest',
+                type: 'dmoj',
+                placement: 38,
+                totalPlacement: 158,
+                score: 350,
+                totalScore: 630,
+                link: 'https://dmoj.ca/contest/dmopc18c4/ranking/',
+                date: {
+                    month: 'December',
+                    day: 12
+                }
+            },
+
+            {
+                name: 'Another Contest 3',
+                type: 'dmoj',
+                placement: 23,
+                totalPlacement: 82,
+                score: 1,
+                totalScore: 4,
+                link: 'https://dmoj.ca/contest/acc3/ranking/',
+                date: {
+                    month: 'November',
+                    day: 27
+                }
+            },
+            {
+                name: 'LKP \'18 Contest 1',
+                type: 'dmoj',
+                placement: 31,
+                totalPlacement: 79,
+                score: 250,
+                totalScore: 600,
+                link: 'https://dmoj.ca/contest/lkp18c1/ranking/',
+                date: {
+                    month: 'November',
+                    day: 19
+                }
+            },
+            {
+                name: 'DMOPC \'18 November Contest',
+                type: 'dmoj',
+                placement: 37,
+                totalPlacement: 80,
+                score: 140,
+                totalScore: 630,
+                link: 'https://dmoj.ca/contest/dmopc18c3/ranking/',
+                date: {
+                    month: 'November',
+                    day: 14
+                }
+            },
+            {
+                name: 'Another Contest 2',
+                type: 'dmoj',
+                placement: 114,
+                totalPlacement: 114,
+                score: 0,
+                totalScore: 3,
+                link: 'https://dmoj.ca/contest/acc2/ranking/',
+                date: {
+                    month: 'November',
+                    day: 13
+                }
+            },
+
+            {
+                name: 'Another Contest 1',
+                type: 'dmoj',
+                placement: 114,
+                totalPlacement: 114,
+                score: 0,
+                totalScore: 3,
+                link: 'https://dmoj.ca/contest/acc1/ranking/',
+                date: {
+                    month: 'October',
+                    day: 16
+                }
+            },
+            {
+                name: 'DMOPC \'18 October Contest',
+                type: 'dmoj',
+                placement: 44,
+                totalPlacement: 98,
+                score: 360,
+                totalScore: 630,
+                link: 'https://dmoj.ca/contest/dmopc18c2/ranking/',
+                date: {
+                    month: 'October',
+                    day: 10
+                }
+            },
+            {
+                name: 'Codeforces Round 514 (Div. 2)',
+                type: 'cf',
+                placement: 2057,
+                totalPlacement: 4764,
+                score: 1320,
+                totalScore: 7500,
+                link: 'https://codeforces.com/contest/1059/standings/participant/20165494#p20165494',
+                date: {
+                    month: 'October',
+                    day: 5
+                }
+            },
+
+            {
+                name: 'CCC 2018 - Senior',
+                type: 'uwaterloo',
+                placement: 50,
+                totalPlacement: 2144,
+                placementInfo: 'Approx.',
+                score: 50,
+                totalScore: 75,
+                link: 'https://cemc.uwaterloo.ca/contests/past_contests/2018/2018CCCResults.pdf',
+                date: {
+                    month: 'February',
+                    day: 14
+                },
+                groups: ['official', 'highlight']
+            }
+        ]
+    };
+</script>
