@@ -13,9 +13,9 @@
 
 {# Selector Widget #}
 <div class="contest-selector-widget btn-group mb-3 mt-1" role="group">
-    <button type="button" mode="official" class="btn btn-outline-primary">Onsites n' More Official Things</button>
+    <button type="button" mode="official" class="btn btn-outline-primary">Onsites/Official</button>
     <button type="button" mode="highlight" class="btn btn-outline-primary">Highlights</button>
-    <button type="button" mode="all" class="btn btn-outline-primary">E V E R Y T H I N G</button>
+    <button type="button" mode="all" class="btn btn-outline-primary">Everything</button>
 </div>
 
 {# Contest Divs #}
@@ -25,14 +25,15 @@
 
 {# Online Judge Profiles #}
 <div class="row mt-2">
-    <h3>Online Judge Profiles</h3>
+    <h3>Online Judge Accounts</h3>
 </div>
 
 <div class="row mt-1">
     <a href="https://dmoj.ca/user/Plasmatic" class="btn btn-sm btn-outline-secondary mr-1">DM::OJ</a>
     <a href="https://codeforces.com/profile/Plasmatic" class="btn btn-sm btn-outline-secondary mr-1">Codeforces A</a>
     <a href="https://codeforces.com/profile/zey_zey_chen" class="btn btn-sm btn-outline-secondary mr-1">Codeforces B</a>
-    <a href="https://atcoder.jp/user/Plasmatic" class="btn btn-sm btn-outline-secondary">AtCoder</a>
+    <a href="https://atcoder.jp/user/Plasmatic" class="btn btn-sm btn-outline-secondary mr-1">AtCoder</a>
+    <a href="https://www.topcoder.com/members/Plasmatic" class="btn btn-sm btn-outline-secondary">Topcoder</a>
 </div>
 
 {# Load contest data #}
@@ -65,6 +66,8 @@
                     case 'cf':
                     case 'dmoj':
                     case 'facebook':
+                    case 'reply':
+                    case 'topcoder':
                         iconFileExtension = 'png';
                         break;
                     case 'google':

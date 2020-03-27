@@ -73,8 +73,8 @@ def index(req):
         return redirect('dmojsolutions:index')
 
     # Get solution set
-    qset = Solution.objects.distinct().filter(
-        Q(code__icontains=search) | Q(problem__name__icontains=search)).filter(problem__isnull=False).order_by('code')
+    qset = Problem.objects.filter(
+        (Q(code__icontains=search) | Q(name__icontains=search)) & Q(solution__isnull=False)).distinct().order_by('code')
     sol_cnt = qset.count()
 
     # Changed offset based on submit button clicked
@@ -95,7 +95,7 @@ def index(req):
         messages.error(req, 'Invalid submit method!')
 
     # Get solution set and add to context
-    sols = [x.problem for x in qset[offset:offset + PROBLEMS_PER_PAGE]]
+    sols = qset[offset:offset + PROBLEMS_PER_PAGE]
     context['solution_count'] = sol_cnt
     context['solutions'] = sols
 
@@ -114,13 +114,23 @@ def index(req):
 
 PDF_URL_FORMAT = 'https://dmoj.ca/problem/%s/pdf'
 
+PRISM_LANG = {
+    'py': 'py',
+    'cpp': 'clike'
+}
+
+FULL_LANG = {
+    'py': 'Python',
+    'cpp': 'C++'
+}
+
 
 def view(req, code, lang):
     solution = get_object_or_404(Solution, ext=lang, code=code)
     problem = get_object_or_404(Problem, id=solution.problem_id)
 
-    context = {'code': code, 'ext': lang, 'problem': problem, 'pdf_link': PDF_URL_FORMAT % code,
-               'src': solution.src, 'user': req.user}
+    context = {'code': code, 'ext': lang, 'prism_lang': PRISM_LANG[lang], 'full_lang': FULL_LANG[lang],
+               'problem': problem, 'pdf_link': PDF_URL_FORMAT % code, 'src': solution.src, 'user': req.user}
 
     return render(req, 'dmojsolutions/view.html', context)
 

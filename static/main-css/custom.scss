@@ -28,30 +28,23 @@
 // DM::OJ-sols View HTML
 // -------------------------------
 
-$pdf-height: 1000px;
-$pdf-width: 800px;
+div.view-code {
+  background: #f5f2f0;
+  margin: 0.75em;
 
-.view-table {
-  tr {
-    td {
-      vertical-align: top;
-      resize: both;
-      overflow: auto;
+  pre {
+    code {
+      white-space: pre !important;
     }
 
-    td.view-code {
-      width: 100%;
-      code {
-        height: 10px;
-      }
-      overflow: scroll;
-    }
-
-    td.view-problem embed {
-      height: $pdf-height;
-      width: $pdf-width;
+    &, code, code span {
+      font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono", "Droid Sans Mono", monospace, monospace !important;
     }
   }
+
+  overflow: scroll;
+  //max-width: 75em;
+  //max-height: 100em;
 }
 
 // -------------------------------

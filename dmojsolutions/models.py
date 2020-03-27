@@ -1,7 +1,6 @@
 from django.core.exceptions import ObjectDoesNotExist
 from django.db import models
 
-
 # Create your models here.
 from dmojsolutions.views.github_util import src_for_code
 
@@ -24,6 +23,10 @@ class Problem(models.Model):
     @property
     def py_solution(self):
         return self.solution('py')
+
+    @property
+    def has_solution(self):
+        return self.cpp_solution or self.py_solution
 
     def __str__(self):
         return self.name

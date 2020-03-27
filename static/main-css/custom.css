@@ -18,21 +18,16 @@
   margin: 1em;
 }
 
-.view-table tr td {
-  vertical-align: top;
-  resize: both;
-  overflow: auto;
-}
-.view-table tr td.view-code {
-  width: 100%;
+div.view-code {
+  background: #f5f2f0;
+  margin: 0.75em;
   overflow: scroll;
 }
-.view-table tr td.view-code code {
-  height: 10px;
+div.view-code pre code {
+  white-space: pre !important;
 }
-.view-table tr td.view-problem embed {
-  height: 1000px;
-  width: 800px;
+div.view-code pre, div.view-code pre code, div.view-code pre code span {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono", "Droid Sans Mono", monospace, monospace !important;
 }
 
 /*# sourceMappingURL=custom.css.map */
