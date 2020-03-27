@@ -29,5 +29,8 @@ div.view-code pre code {
 div.view-code pre, div.view-code pre code, div.view-code pre code span {
   font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono", "Droid Sans Mono", monospace, monospace !important;
 }
+div.view-code pre.token.operator, div.view-code pre code.token.operator, div.view-code pre code span.token.operator {
+  background: none;
+}
 
 /*# sourceMappingURL=custom.css.map */

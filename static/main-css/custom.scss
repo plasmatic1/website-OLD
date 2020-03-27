@@ -38,6 +38,10 @@ div.view-code {
     }
 
     &, code, code span {
+      &.token.operator {
+        background: none;
+      }
+
       font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono", "Droid Sans Mono", monospace, monospace !important;
     }
   }
