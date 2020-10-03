@@ -7,15 +7,16 @@
 
 {# Actual HTML #}
 <div class="row mt-5" id="contests">
-    <h1>Contest Performance</h1>
+    <h1>Contest Highlights</h1>
 </div>
 {% include 'widgets/spacer.html' %}
 
 {# Selector Widget #}
 <div class="contest-selector-widget btn-group mb-3 mt-1" role="group">
-    <button type="button" mode="official" class="btn btn-outline-primary">Onsites/Official</button>
-    <button type="button" mode="highlight" class="btn btn-outline-primary">Highlights</button>
-    <button type="button" mode="all" class="btn btn-outline-primary">Everything</button>
+{#    <button type="button" mode="official" class="btn btn-outline-primary">Onsites/Official</button>#}
+{#    <button type="button" mode="highlight" class="btn btn-outline-primary">Highlights</button>#}
+{#    <button type="button" mode="all" class="btn btn-outline-primary">Everything</button>#}
+    <p>These are just contests that I wanted to highlight for some reason or another and is by no means a comprehensive list</p>
 </div>
 
 {# Contest Divs #}
@@ -25,15 +26,18 @@
 
 {# Online Judge Profiles #}
 <div class="row mt-2">
-    <h3>Online Judge Accounts</h3>
+    <h3>Online Judge Profiles</h3>
 </div>
 
 <div class="row mt-1">
-    <a href="https://dmoj.ca/user/Plasmatic" class="btn btn-sm btn-outline-secondary mr-1">DM::OJ</a>
-    <a href="https://codeforces.com/profile/Plasmatic" class="btn btn-sm btn-outline-secondary mr-1">Codeforces A</a>
-    <a href="https://codeforces.com/profile/zey_zey_chen" class="btn btn-sm btn-outline-secondary mr-1">Codeforces B</a>
-    <a href="https://atcoder.jp/user/Plasmatic" class="btn btn-sm btn-outline-secondary mr-1">AtCoder</a>
-    <a href="https://www.topcoder.com/members/Plasmatic" class="btn btn-sm btn-outline-secondary">Topcoder</a>
+    <ul>
+        <li><a href="https://dmoj.ca/user/Plasmatic">DMOJ: Plasmatic</a></li>
+        <li><a href="https://codeforces.com/profile/Plasmatic">CF: Plasmatic</a></li>
+        <li><a href="https://codeforces.com/profile/zey_zey_chen">CF: zey_zey_chen</a></li>
+        <li><a href="https://codeforces.com/profile/chad_master_13221">CF: chad_master_13221</a></li>
+        <li><a href="https://atcoder.jp/user/Plasmatic">AtCoder: Plasmatic</a></li>
+        <li><a href="https://www.topcoder.com/members/Plasmatic">Topcoder: Plasmatic</a></li>
+    </ul>
 </div>
 
 {# Load contest data #}

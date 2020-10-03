@@ -55,7 +55,8 @@ INSTALLED_APPS = [
     'dmojsolutions.apps.DmojsolutionsConfig',
     'main.apps.MainConfig',
     'otherapps.apps.OtherappsConfig',
-    'todolist.apps.TodolistConfig'
+    'todolist.apps.TodolistConfig',
+    'blog.apps.BlogConfig'
 ]
 
 # CRISPY STUFF
