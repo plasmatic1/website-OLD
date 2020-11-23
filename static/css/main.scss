@@ -1,0 +1,72 @@
+// Universal Styling for basic things
+$block-margin: 15px;
+$block-padding: 10px;
+$button-padding: 7px;
+
+// -------------------------
+// BASIC GLOBAL STYLING
+// -------------------------
+
+body {
+  background: #fbfbfb;
+}
+
+.container {
+  max-width: 70%;
+}
+
+*:not(code) {
+  font-family: 'Ubuntu', 'Calibri', 'Helvetica', 'Arial', sans-serif;
+}
+
+// Headers
+h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+
+// So that code samples display properly
+code {
+  font-family: 'Consolas', monospace;
+}
+
+pre {
+  color: rgba(255, 63, 113, 0.99);
+}
+
+// No idea what this does but I don't want to remove it
+// It does something related to fixing bootstrap forms
+.form-group.is-invalid {
+  .invalid-feedback {
+    display: block;
+  }
+}
+
+// -------------------------
+// SPECIFIC ELEMENTS
+// -------------------------
+
+footer {
+  padding-bottom: 5em;
+  padding-top: 2em;
+  background: #ededed;
+  opacity: 60%;
+
+  .container {
+    text-align: center;
+
+    div {
+      display: inline-block;
+      margin: auto;
+
+      a i {
+          color: #777777;
+      }
+    }
+
+    p a {
+      color: #777777;
+    }
+  }
+}

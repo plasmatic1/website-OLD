@@ -16,11 +16,17 @@
 
 .project-card {
   margin: 1em;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.table-layout-only tr td, .table-layout-only tr th {
+  padding: 5px;
 }
 
 div.view-code {
   background: #f5f2f0;
   margin: 0.75em;
+  width: 100%;
   overflow: scroll;
 }
 div.view-code pre code {

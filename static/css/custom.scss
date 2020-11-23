@@ -1,0 +1,69 @@
+// -------------------------------
+// GENERAL
+// -------------------------------
+
+// So that messages float to the bottom
+#messages-div {
+  position: fixed;
+  bottom: 1em;
+  left: 1em;
+
+  // So the messages div doesn't cover the entire bottom
+  max-width: 25% !important;
+}
+
+// text-warning is too light
+.text-warning2 {
+  color: #c19000;
+}
+
+// Basically like a note (i.e. "Note: This image is old")
+.note {
+  font-style: italic;
+  color: mix(#656565, yellow, 75%);
+}
+
+// -------------------------------
+// MAIN PAGE
+// -------------------------------
+
+// Extra Padding and Stuff to project cards
+.project-card {
+  margin: 1em;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+// -------------------------------
+// DM::OJ-sols View HTML
+// -------------------------------
+
+// Special tables that have little margins
+.table-layout-only {
+  tr {
+    td, th {
+      padding: 5px;
+    }
+  }
+}
+
+div.view-code {
+  background: #f5f2f0;
+  margin: 0.75em;
+  width: 100%;
+
+  pre {
+    code {
+      white-space: pre !important;
+    }
+
+    &, code, code span {
+      &.token.operator {
+        background: none;
+      }
+
+      font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono", "Droid Sans Mono", monospace, monospace !important;
+    }
+  }
+
+  overflow: scroll;
+}

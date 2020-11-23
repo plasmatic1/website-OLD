@@ -3,12 +3,6 @@
 {% block header %} Hello! {% endblock %}
 {% block page_name %} home {% endblock %}
 
-{% block head-extra %}
-    {# Font Awesome Icons!!! #}
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
-          integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous"/>
-{% endblock %}
-
 {% block body %}
     {% load static %}
 
@@ -17,7 +11,7 @@
         <div class="row">
             <div class="col col-5">
                 <p>Hi! My name is Moses and this is my website!</p>
-                <p>This is where I keep most of my personal profile (mostly CS things) along with some widgets and webapps.  If you find any bugs/errors feel free to report them on
+                <p>This is where I keep most of my personal profile along with some widgets and webapps.  If you find any bugs/errors feel free to report them on
                     <a href="https://github.com/plasmatic1/website">GitHub</a></p>
                 <p>Happy browsing!</p>
 
@@ -26,7 +20,7 @@
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#contests">Contests</a></li>
                     <li><a href="{% url 'main:resume' %}">Resume</a></li>
-                    <li><a href="#contact">Contact Info</a></li>
+                    <li><a href="#footer">Contact Info</a></li>
                 </ul>
 
                 <p>Miscellaneous Things:</p>
@@ -43,6 +37,5 @@
         {# Parts of the website #}
         {% include 'main/parts/projects.html' %}
         {% include 'main/parts/contests.html' %}
-        {% include 'main/parts/contact.html' %}
     </div>
 {% endblock %}

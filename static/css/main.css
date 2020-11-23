@@ -1,0 +1,50 @@
+body {
+  background: #fbfbfb;
+}
+
+.container {
+  max-width: 70%;
+}
+
+*:not(code) {
+  font-family: "Ubuntu", "Calibri", "Helvetica", "Arial", sans-serif;
+}
+
+h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+code {
+  font-family: "Consolas", monospace;
+}
+
+pre {
+  color: rgba(255, 63, 113, 0.99);
+}
+
+.form-group.is-invalid .invalid-feedback {
+  display: block;
+}
+
+footer {
+  padding-bottom: 5em;
+  padding-top: 2em;
+  background: #ededed;
+  opacity: 60%;
+}
+footer .container {
+  text-align: center;
+}
+footer .container div {
+  display: inline-block;
+  margin: auto;
+}
+footer .container div a i {
+  color: #777777;
+}
+footer .container p a {
+  color: #777777;
+}
+
+/*# sourceMappingURL=main.css.map */
