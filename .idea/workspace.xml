@@ -2,37 +2,12 @@
 <project version="4">
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/templates/todolist/index.html" line="3" />
-    <bookmark url="file://$PROJECT_DIR$/templates/main/parts/contests.html" line="31" />
+    <bookmark url="file://$PROJECT_DIR$/templates/main/parts/contests.html" line="32" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e5950ff1-e007-43b0-9793-a17d1de6b347" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/static/css/custom.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/main.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/main.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/forms.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/forms.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/forms.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/forms.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/forms.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/forms.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/header.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/header.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/main-css/basic.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/main-css/basic.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/main-css/basic.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/main-css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/custom.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/main-css/custom.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/main-css/custom.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/custom.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/main-css/fixes.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/main-css/fixes.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/main-css/fixes.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dmojsolutions/view.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dmojsolutions/view.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main/parts/contact.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/main/parts/contests.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/parts/contests.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/main/parts/contests_data.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/parts/contests_data.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/nav.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/nav.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -66,13 +41,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/css/custom.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="319">
+            <state relative-caret-position="850">
               <caret line="50" column="13" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/dmojsolutions/view.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="391">
@@ -82,9 +57,27 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/main/parts/contests.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="183">
+              <caret line="106" lean-forward="true" selection-start-line="106" selection-end-line="106" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/main/parts/contests_data.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="35" column="47" selection-start-line="35" selection-start-column="47" selection-end-line="35" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/main/parts/projects.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2057">
+            <state relative-caret-position="676">
               <caret line="121" selection-start-line="121" selection-end-line="121" />
             </state>
           </provider>
@@ -170,8 +163,6 @@
         <option value="$PROJECT_DIR$/blog/urls.py" />
         <option value="$PROJECT_DIR$/website/settings.py" />
         <option value="$PROJECT_DIR$/templates/main/parts/contests_data_old.html" />
-        <option value="$PROJECT_DIR$/templates/main/parts/contests_data.html" />
-        <option value="$PROJECT_DIR$/templates/main/parts/contests.html" />
         <option value="$PROJECT_DIR$/templates/nav.html" />
         <option value="$PROJECT_DIR$/static/main-css/fixes.css" />
         <option value="$PROJECT_DIR$/templates/main/parts/contact.html" />
@@ -184,6 +175,8 @@
         <option value="$PROJECT_DIR$/static/css/main.scss" />
         <option value="$PROJECT_DIR$/static/css/custom.scss" />
         <option value="$PROJECT_DIR$/templates/dmojsolutions/view.html" />
+        <option value="$PROJECT_DIR$/templates/main/parts/contests.html" />
+        <option value="$PROJECT_DIR$/templates/main/parts/contests_data.html" />
       </list>
     </option>
   </component>
@@ -197,6 +190,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -254,7 +248,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -351,22 +344,23 @@
       <workItem from="1602029361671" duration="523000" />
       <workItem from="1603557098073" duration="27000" />
       <workItem from="1606096608812" duration="5684000" />
+      <workItem from="1611466516048" duration="868000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="142125000" />
+    <option name="totallyTimeSpent" value="142993000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17590618" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17750533" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32917964" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.21287642" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.21287642" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -628,60 +622,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/main/parts/contests_data.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="863">
-          <caret line="386" column="12" selection-start-line="386" selection-start-column="12" selection-end-line="386" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/css/header.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/static/css/main.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/main-css/fixes.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/static/main-css/fixes.css" />
     <entry file="file://$PROJECT_DIR$/templates/widgets/messages.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/main/parts/contests.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="41" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/main-css/fixes.scss">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/main/parts/contact.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/main/parts/projects.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2057">
-          <caret line="121" selection-start-line="121" selection-end-line="121" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/main/links/github_link.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="49" lean-forward="true" selection-start-column="49" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/static/main-css/fixes.scss" />
+    <entry file="file://$PROJECT_DIR$/templates/main/parts/contact.html" />
     <entry file="file://$PROJECT_DIR$/static/css/header.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -706,6 +658,13 @@
     <entry file="file://$PROJECT_DIR$/static/css/forms.scss">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/main/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" column="17" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/static/css/main.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
@@ -715,15 +674,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/static/css/custom.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
+        <state relative-caret-position="850">
           <caret line="50" column="13" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/main/index.html">
+    <entry file="file://$PROJECT_DIR$/templates/main/links/github_link.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="17" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
+        <state>
+          <caret column="49" lean-forward="true" selection-start-column="49" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/main/parts/projects.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="676">
+          <caret line="121" selection-start-line="121" selection-end-line="121" />
         </state>
       </provider>
     </entry>
@@ -731,6 +697,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="23" column="27" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/main/parts/contests.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="106" lean-forward="true" selection-start-line="106" selection-end-line="106" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/main/parts/contests_data.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="35" column="47" selection-start-line="35" selection-start-column="47" selection-end-line="35" selection-end-column="47" />
         </state>
       </provider>
     </entry>
