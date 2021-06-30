@@ -41,7 +41,7 @@ class LoginFormView(FormView):
         user = authenticate(self.request, username=post['username'], password=post['password'])
         if user:
             login(self.request, user)
-            return HttpResponseRedirect(self.request.GET.get('next', '/'))
+            return HttpResponseRedirect(self.request.GET.get('next', '/dmojsols/'))
         messages.warning(self.request, 'Invalid Username/Password!')
         return redirect('login')
 

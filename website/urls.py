@@ -20,17 +20,14 @@ from view_auth import logout_user, LoginFormView, login_as_guest
 
 urlpatterns = [
     # Path to subpages
-    path('admin/', admin.site.urls, name='admin'),
+    path('dmojsols/admin/', admin.site.urls, name='admin'),
     path('dmojsols/', include('dmojsolutions.urls', namespace='dmojsolutions')),
-    path('todo/', include('todolist.urls', namespace='todolist')),
-    path('blog/', include('blog.urls', namespace='blog')),
-    path('other/', include('otherapps.urls', namespace='otherapps')),
-    path('', include('main.urls', namespace='main')),
+    # path('todo/', include('todolist.urls', namespace='todolist')),
 
     # Logging in/out
-    path('login/', LoginFormView.as_view(), name='login'),
-    path('logout/', logout_user, name='logout'),
+    path('dmojsols/login/', LoginFormView.as_view(), name='login'),
+    path('dmojsols/logout/', logout_user, name='logout'),
 
     # Other utility things
-    path('login_as_guest/', login_as_guest, name='login_as_guest'),
+    path('dmojsols/login_as_guest/', login_as_guest, name='login_as_guest'),
 ]
