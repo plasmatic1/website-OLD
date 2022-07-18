@@ -1,5 +1,9 @@
 # Website
 
+This part of the website now only contains the DMOJ-solutions portion of the site.  To check out the branch still being maintained, click [here](https://github.com/plasmatic1/website-OLD/tree/reduced-to-dmojsols).
+
+# Old Readme
+
 My personal website!
 
 You can access it [here](http://mosesxu.ca)!
