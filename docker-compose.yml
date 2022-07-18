@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+  website-old:
+    build:
+      context: .
+      args:
+        DJANGO_SUPERUSER_USERNAME: moses
+        DJANGO_SUPERUSER_EMAIL: this@email.isfake
+        DJANGO_SUPERUSER_PASSWORD: moses123
+    ports:
+      - "8000:8000"

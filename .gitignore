@@ -12,5 +12,5 @@ db.sqlite3
 # venv
 venv/
 
-# for testing docker containers
-docker-compose.yml
+# Django static files
+staticfiles/
