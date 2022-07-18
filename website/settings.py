@@ -25,7 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # CHECK IF SECRET_KEY and DEBUG and GITHUB_AUTH_KEY are present and set them
 try:
     config_module = import_module('config')
-    for key in ['SECRET_KEY', 'DEBUG', 'GITHUB_AUTH_KEY', 'STATIC_ROOT']:
+    for key in ['SECRET_KEY', 'DEBUG', 'GITHUB_AUTH_KEY']:
         if not hasattr(config_module, key):
             sys.stderr.write(f'Key {key} does not exist in private config!\n')
             sys.exit(-1)
@@ -63,6 +63,9 @@ INSTALLED_APPS = [
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -140,5 +143,6 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
 
-# STATIC_ROOT = '~/staticfiles'  # linux only thing tbh
-STATIC_URL = '/static/'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATIC_URL = '/dmoj-sols/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
