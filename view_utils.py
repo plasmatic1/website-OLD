@@ -3,6 +3,7 @@ from functools import wraps
 from django.contrib import messages
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import redirect
+from django.urls import reverse
 
 
 def not_implemented(*_, **__):
@@ -21,7 +22,7 @@ def get_previous_url(req):
     :param req: The request
     :return: The URL of the referrer as a string
     """
-    return req.META.get('HTTP_REFERER', '/')
+    return req.META.get('HTTP_REFERER', reverse('dmojsolutions:index'))
 
 
 def get_previous_url_as_redirect(req):
@@ -30,7 +31,7 @@ def get_previous_url_as_redirect(req):
     :param req: The request
     :return: The URL of the referrer wrapped in a HttpResponseRedirect object
     """
-    return HttpResponseRedirect(req.META.get('HTTP_REFERER', '/'))
+    return HttpResponseRedirect(req.META.get('HTTP_REFERER', reverse('dmojsolutions:index')))
 
 
 def superuser_required(url_pattern_name):

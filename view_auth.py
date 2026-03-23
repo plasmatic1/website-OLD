@@ -7,6 +7,7 @@ from django.contrib.auth.models import User
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import HttpResponseRedirect
 from django.shortcuts import redirect
+from django.urls import reverse
 from django.views.generic import FormView
 
 from view_utils import get_previous_url_as_redirect
@@ -41,7 +42,7 @@ class LoginFormView(FormView):
         user = authenticate(self.request, username=post['username'], password=post['password'])
         if user:
             login(self.request, user)
-            return HttpResponseRedirect(self.request.GET.get('next', '/dmojsols/'))
+            return HttpResponseRedirect(self.request.GET.get('next', reverse('dmojsolutions:index')))
         messages.warning(self.request, 'Invalid Username/Password!')
         return redirect('login')
 
